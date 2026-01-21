@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="owl game"
+config/name="Owl Game Main"
 run/main_scene="res://Scenes/node_2d.tscn"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 
 [audio]
 
@@ -29,6 +29,10 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[global_group]
+
+player=""
 
 [input]
 

@@ -1,0 +1,34 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1763667604
+::res://Assets/::1761327252
+::res://Assets/Sounds/::1761327253
+default_bus_layout.tres::AudioBusLayout/AudioBusLayout::3075923912532353289::1761245060::0::1::::<><><>0<>0<><>::
+GDC Bonkers Soundtrack Concept.mp3::AudioStreamMP3/AudioStreamMP3::5664461093234439531::1761244961::1761327253::1::::<><><>0<>0<>aed33e567e0bf712e6375023bfaa1dc4<>res://.godot/imported/GDC Bonkers Soundtrack Concept.mp3-26c30f67dd96af819def23d0c3bbdf3c.mp3str::
+::res://Assets/Sprites/::1761853995
+idle-ani.png::CompressedTexture2D/CompressedTexture2D::8279634411659627170::1760977612::1761327018::1::::<><><>0<>0<>662d620df618087006fa94ad95930251<>res://.godot/imported/idle-ani.png-b86ab982818e6a291e15bf7969e22f17.ctex::
+mask.png::CompressedTexture2D/CompressedTexture2D::8974074049333667670::1761245682::1761327015::1::::<><><>0<>0<>464ce816e96cc429f690ba53a03ea9c9<>res://.godot/imported/mask.png-cc24565e1ad71482bc654fc4e2b15dae.ctex::
+owlAni.png::CompressedTexture2D/CompressedTexture2D::2295683464312923509::1760997583::1761327029::1::::<><><>0<>0<>dd370d103ea6795a4b2bf1fd4dd456d4<>res://.godot/imported/owlAni.png-1266e42ada397ba3ca1736e02a64b56d.ctex::
+spear-Sheet.png::CompressedTexture2D/CompressedTexture2D::9135408673070707268::1761853995::1761853995::1::::<><><>0<>0<>b5dc93a202b7926f788906fdcbcb6329<>res://.godot/imported/spear-Sheet.png-ce10c92e261a4de2d6cd3328fedf0219.ctex::
+::res://Assets/World/::1761327246
+world_tileset.png::CompressedTexture2D/CompressedTexture2D::329057458219853738::1760642824::1761327241::1::::<><><>0<>0<>544588954bacc5ffa309cc646d444cbc<>res://.godot/imported/world_tileset.png-27c7eb92b7b0bbe6a25d62b88f47fd1d.ctex::
+::res://Assets/World/Background/::1761327243
+city.png::CompressedTexture2D/CompressedTexture2D::8809655659774833038::1760727520::1761327243::1::::<><><>0<>0<>3e8fc1720ac8e3605ec10cec5bcd55d7<>res://.godot/imported/city.png-afec6058db9daed3693a855c8e36d60b.ctex::
+stars.png::CompressedTexture2D/CompressedTexture2D::3499712194980562077::1760726798::1761327243::1::::<><><>0<>0<>40ec33423a21a790a0d654a3558a9b98<>res://.godot/imported/stars.png-5fb20ed6c43a938ccaf0d361a321ecde.ctex::
+::res://Assets/World/Background/game/::1761327243
+1.png::CompressedTexture2D/CompressedTexture2D::380240433383970932::1760731122::1761327243::1::::<><><>0<>0<>53c579d20de8da348b4ff7a024cedb40<>res://.godot/imported/1.png-c17ba4f7157b7859422489391097293e.ctex::
+2.png::CompressedTexture2D/CompressedTexture2D::5162737350502219915::1760731122::1761327243::1::::<><><>0<>0<>6f0a67f2bb49920e1614ea93e1aca0ef<>res://.godot/imported/2.png-347e6bb27cf9cadb6a8889fb91c00960.ctex::
+3.png::CompressedTexture2D/CompressedTexture2D::92472843687162460::1760731122::1761327243::1::::<><><>0<>0<>ba6abd609bd0ca693cd431c91bd4d6d0<>res://.godot/imported/3.png-e1b0237445db10598f0a591802caa7f2.ctex::
+4.png::CompressedTexture2D/CompressedTexture2D::7801061819735577270::1760731122::1761327243::1::::<><><>0<>0<>2bbb19d6868504851be49df58d87819e<>res://.godot/imported/4.png-4964aab073838a6b9491103a124dfa4c.ctex::
+5.png::CompressedTexture2D/CompressedTexture2D::801463675853060001::1760731122::1761327243::1::::<><><>0<>0<>1311a5ee42eeb8d3e0b654fb7f7211cb<>res://.godot/imported/5.png-1579ca9c1d947e27909eaa988ddcf340.ctex::
+::res://Scenes/::1763667489
+mask.tscn::PackedScene::875582675820384022::1763667489::0::1::::<><><>0<>0<><>::uid://d04dxn4ndecmg::::res://Assets/Sprites/mask.png<>uid://v00m1kyw55k5::::res://Scripts/mask.gd
+node_2d.tscn::PackedScene::6034147788165369632::1763667489::0::1::::<><><>0<>0<><>::uid://cm3ep2s7lplt4::::res://Scenes/owl.tscn<>uid://exnr7w1f26re::::res://Assets/World/world_tileset.png<>uid://b06iva1apde4e::::res://Scenes/spear.tscn<>uid://bp4j0pkq6a2nh::::res://Assets/World/Background/stars.png<>uid://fogrfckrohii::::res://Assets/World/Background/game/1.png<>uid://davn2rl064042::::res://Scripts/Sprite-0001.png<>uid://cfs4saskis3ch::::res://Assets/World/Background/game/2.png<>uid://bk2aqpdqmiuu::::res://Assets/World/Background/game/3.png<>uid://dje5l31mnmg03::::res://Assets/World/Background/game/4.png<>uid://loh8wbbth2k0::::res://Assets/World/Background/game/5.png<>uid://cmx531xpmyxk2::::res://Assets/Sounds/GDC Bonkers Soundtrack Concept.mp3<>uid://mqeyo4u4olkw::::res://Scenes/mask.tscn
+owl.tscn::PackedScene::5673181170442073335::1763667489::0::1::::<><><>0<>0<><>::uid://bwweb5x4yi2re::::res://Scripts/character_body_2d.gd<>uid://dp7ymswywu6iw::::res://Assets/Sprites/idle-ani.png<>uid://7ybtoms4i262::::res://Assets/Sprites/owlAni.png
+spear.gd::GDScript/GDScript::5255642538557108050::1761854837::0::1::::<>Area2D<><>0<>0<><>::
+spear.tscn::PackedScene::4205660762818981622::1763667489::0::1::::<><><>0<>0<><>::uid://d3fi31e51pjyy::::res://Assets/Sprites/spear-Sheet.png<>uid://cg44wupm04ap3::::res://Scenes/spear.gd
+::res://Scripts/::1763415454
+character_body_2d.gd::GDScript/GDScript::3976237820665150802::1763415454::0::1::::<>CharacterBody2D<><>0<>0<><>::
+globals.gd::GDScript/GDScript::8889285727093318142::1761854851::0::1::::<>Node<><>0<>0<><>::
+mask.gd::GDScript/GDScript::1527115896772406458::1761331752::0::1::::<>Area2D<><>0<>0<><>::
+Saveload.gd::GDScript/GDScript::2521713410866690121::1761854297::0::1::::<>Node<><>0<>0<><>::
+Sprite-0001.png::CompressedTexture2D/CompressedTexture2D::7203452432324237457::1763067588::1763067588::1::::<><><>0<>0<>7bdd2069ac357965448e5849ad472299<>res://.godot/imported/Sprite-0001.png-f644a0f8e0ab2dee19ebfbadec37f16e.ctex::

@@ -3,8 +3,9 @@ extends CharacterBody2D
 @onready var node_2d_2: Area2D = $"../Node2D2"
 
 var hit_checkpoint = false
+var test := 0
 var mask_picked_up = false
-var doubleJump = 2
+var doubleJump = 1
 var double = true
 const SPEED = 175.0
 const JUMP_VELOCITY = -250.0
@@ -13,7 +14,7 @@ const JUMP_VELOCITY = -250.0
 
 func _physics_process(delta: float) -> void:
 	
-
+	print(test)
 		
 	
 	if Input.is_action_just_pressed("pick up") and Globals.can_pick_up:
@@ -27,15 +28,12 @@ func _physics_process(delta: float) -> void:
 
 	if is_on_floor():
 		doubleJump = 0
-	elif double:
-		doubleJump = 2
 	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	if Saveload.contents_to_save.checkpoint_hit:
-		double = false
+
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and doubleJump != 2:
 		doubleJump += 1
@@ -53,16 +51,19 @@ func _physics_process(delta: float) -> void:
 			sprite_2d.flip_h = false
 		
 		velocity.x = direction * SPEED
+		
 	else:
 		sprite_2d.play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
+	position.x += test
 	move_and_slide()
 
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	hit_checkpoint = true
+
 
 
 func _on_button_2_pressed() -> void:
