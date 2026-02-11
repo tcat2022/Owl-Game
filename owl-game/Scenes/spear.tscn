@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b06iva1apde4e"]
+[gd_scene format=3 uid="uid://b06iva1apde4e"]
 
 [ext_resource type="Texture2D" uid="uid://d3fi31e51pjyy" path="res://Assets/Sprites/spear-Sheet.png" id="1_7nbcr"]
 [ext_resource type="Script" uid="uid://cg44wupm04ap3" path="res://Scenes/spear.gd" id="1_y4joh"]
@@ -42,19 +42,19 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="Node2D" type="Area2D"]
+[node name="Node2D" type="Area2D" unique_id=1968628699]
 script = ExtResource("1_y4joh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1967135153]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_x0hhc")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=500426105]
 sprite_frames = SubResource("SpriteFrames_elm5i")
 autoplay = "default"
 frame_progress = 0.687932
 
-[node name="E" type="Label" parent="."]
+[node name="E" type="Label" parent="." unique_id=1487574266]
 visible = false
 offset_left = -4.0
 offset_top = -35.0

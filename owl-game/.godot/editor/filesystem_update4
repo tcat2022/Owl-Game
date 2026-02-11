@@ -1,9 +1,1 @@
 res://Scenes/node_2d.tscn
-res://Scenes/mask.tscn
-res://Scenes/owl.tscn
-res://Scenes/spear.tscn
-res://Scenes/belt.tscn
-res://conveyer_belt.tscn
-res://Scripts/character_body_2d.gd
-res://static_body_2d.gd
-res://Scripts/secret.gd

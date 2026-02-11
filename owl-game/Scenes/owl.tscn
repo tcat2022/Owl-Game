@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cm3ep2s7lplt4"]
+[gd_scene format=3 uid="uid://cm3ep2s7lplt4"]
 
 [ext_resource type="Script" uid="uid://bwweb5x4yi2re" path="res://Scripts/character_body_2d.gd" id="1_dm34n"]
 [ext_resource type="Texture2D" uid="uid://dp7ymswywu6iw" path="res://Assets/Sprites/idle-ani.png" id="2_eyas1"]
@@ -76,14 +76,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_18y2i"]
 size = Vector2(14, 6.875)
 
-[node name="owl" type="CharacterBody2D" groups=["player"]]
+[node name="owl" type="CharacterBody2D" unique_id=1668035102 groups=["player"]]
 script = ExtResource("1_dm34n")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=708810983]
 sprite_frames = SubResource("SpriteFrames_q04jw")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=683660135]
 position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_18y2i")

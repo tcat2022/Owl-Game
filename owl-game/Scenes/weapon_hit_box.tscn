@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ywkoc8gxcb1o"]
+
+[ext_resource type="Script" uid="uid://bj0faaela6223" path="res://Scenes/weapon_hit_box.gd" id="1_1r8vj"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_1r8vj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7qnp"]
+size = Vector2(92.5, 104.5)
+
+[node name="WeaponHitBox" type="Area2D" unique_id=75900575]
+monitoring = false
+script = ExtResource("1_1r8vj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1235987077]
+position = Vector2(-0.08662033, 0.25155056)
+scale = Vector2(52.86677, -46.2631)
+texture = SubResource("CanvasTexture_1r8vj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2044144200]
+position = Vector2(0.1633873, 0.50154305)
+scale = Vector2(0.57153267, -0.4427091)
+shape = SubResource("RectangleShape2D_c7qnp")
