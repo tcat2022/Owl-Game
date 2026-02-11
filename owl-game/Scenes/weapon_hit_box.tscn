@@ -1,22 +1,56 @@
-[gd_scene format=3 uid="uid://ywkoc8gxcb1o"]
+[gd_scene load_steps=9 format=3 uid="uid://ywkoc8gxcb1o"]
 
 [ext_resource type="Script" uid="uid://bj0faaela6223" path="res://Scenes/weapon_hit_box.gd" id="1_1r8vj"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_1r8vj"]
+[ext_resource type="Texture2D" uid="uid://d3fi31e51pjyy" path="res://Assets/Sprites/spear-Sheet.png" id="2_m0edj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c7qnp"]
 size = Vector2(92.5, 104.5)
 
-[node name="WeaponHitBox" type="Area2D" unique_id=75900575]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyav6"]
+atlas = ExtResource("2_m0edj")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkhru"]
+atlas = ExtResource("2_m0edj")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgbjq"]
+atlas = ExtResource("2_m0edj")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocqr3"]
+atlas = ExtResource("2_m0edj")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_og1on"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyav6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkhru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgbjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocqr3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="WeaponHitBox" type="Area2D"]
 monitoring = false
 script = ExtResource("1_1r8vj")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1235987077]
-position = Vector2(-0.08662033, 0.25155056)
-scale = Vector2(52.86677, -46.2631)
-texture = SubResource("CanvasTexture_1r8vj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2044144200]
-position = Vector2(0.1633873, 0.50154305)
-scale = Vector2(0.57153267, -0.4427091)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.163387, 0.501543)
+scale = Vector2(0.571533, -0.442709)
 shape = SubResource("RectangleShape2D_c7qnp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_og1on")
+autoplay = "default"

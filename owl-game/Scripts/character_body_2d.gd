@@ -88,6 +88,9 @@ func EquipingWeapon() -> void:
 		Globals.WeaponEquipped = false
 		$WeaponHitBox.PROCESS_MODE_DISABLED
 		$WeaponHitBox.visible = false
+		$WeaponHitBox.position = Vector2(0, 0)
+		$WeaponHitBox/AnimatedSprite2D.rotation_degrees = 0
+		$WeaponHitBox/AnimatedSprite2D.position.x = 0
 
 	##Makes sure hitbox is disabled if weapon is not equipped
 	elif (Globals.WeaponEquipped == false):
@@ -103,10 +106,15 @@ func Combat() -> void: #Function for Combat
 	#Determines which side the screen mouse is on
 	if ((get_viewport().get_mouse_position().x >= get_viewport().size.x/2) && Input.is_action_just_pressed("attack")):
 		$WeaponHitBox.position = Vector2(21, 3)
+		$WeaponHitBox/AnimatedSprite2D.rotation_degrees = 90
+		$WeaponHitBox/AnimatedSprite2D.position.x = -25
 		print("right")
 	elif ((get_viewport().get_mouse_position().x <= get_viewport().size.x/2) && Input.is_action_just_pressed("attack")):
 		$WeaponHitBox.position = Vector2(-21, 3)
+		$WeaponHitBox/AnimatedSprite2D.rotation_degrees = -90
+		$WeaponHitBox/AnimatedSprite2D.position.x = 25
 		print("left")
+		
 	
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

@@ -1,1 +1,15 @@
 res://Scenes/node_2d.tscn
+res://Scripts/character_body_2d.gd
+res://Scenes/mask.tscn
+res://Scenes/owl.tscn
+res://Scenes/spear.tscn
+res://Scenes/belt.tscn
+res://conveyer_belt.tscn
+res://Scenes/weapon_hit_box.tscn
+res://Scripts/globals.gd
+res://Scripts/mask.gd
+res://Scripts/Saveload.gd
+res://Scripts/secret.gd
+res://Scenes/spear.gd
+res://static_body_2d.gd
+res://Scenes/weapon_hit_box.gd
