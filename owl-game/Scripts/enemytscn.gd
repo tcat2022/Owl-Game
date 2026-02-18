@@ -22,3 +22,8 @@ func platform_edge():
 			direction = -direction 
 			$RayCast2D.position.x *= -1
 			$RayCast2D2.target_position = Vector2((direction*9),0)
+			
+	if $RayCast2D2.is_colliding():
+		var obj = $RayCast2D2.get_collider()
+		if obj.name == "owl":
+			get_tree().reload_current_scene()

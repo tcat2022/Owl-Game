@@ -211,6 +211,9 @@ distance = -8.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fg7i4"]
 size = Vector2(20, 59)
 
+[sub_resource type="Animation" id="Animation_hpu6p"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_gwne5"]
 resource_name = "secret"
 tracks/0/type = "value"
@@ -225,9 +228,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [0, -10000000]
 }
-
-[sub_resource type="Animation" id="Animation_hpu6p"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_op2xg"]
 _data = {
