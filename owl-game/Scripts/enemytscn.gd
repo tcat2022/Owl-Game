@@ -1,0 +1,24 @@
+extends Area2D
+
+var direction = 1
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group('player'):
+		get_tree().reload_current_scene()
+
+
+func _physics_process(delta: float) -> void:
+	print($RayCast2D2.target_position)
+	platform_edge()
+	position.x += 1 * direction
+
+func platform_edge():
+	if not $RayCast2D.is_colliding():
+		direction = -direction 
+		$RayCast2D.position.x *= -1
+		$RayCast2D2.target_position = Vector2((direction*9),0)
+		
+	if $RayCast2D2.is_colliding():
+			direction = -direction 
+			$RayCast2D.position.x *= -1
+			$RayCast2D2.target_position = Vector2((direction*9),0)

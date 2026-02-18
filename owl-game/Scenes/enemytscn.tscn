@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://cajrn10wkx3tq"]
+
+[ext_resource type="Script" uid="uid://dtaybyjtxnre" path="res://Scripts/enemytscn.gd" id="1_cva8j"]
+[ext_resource type="Texture2D" uid="uid://dydyje56xwsbq" path="res://Assets/Sprites/wizzy.png" id="1_vd3dh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cva8j"]
+size = Vector2(15, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pxyt"]
+atlas = ExtResource("1_vd3dh")
+region = Rect2(80, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma38c"]
+atlas = ExtResource("1_vd3dh")
+region = Rect2(96, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1q2d"]
+atlas = ExtResource("1_vd3dh")
+region = Rect2(112, 112, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bydwr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pxyt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ma38c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1q2d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_cva8j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 3)
+shape = SubResource("RectangleShape2D_cva8j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bydwr")
+autoplay = "default"
+frame_progress = 0.64271
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(10, 1)
+target_position = Vector2(0, 8)
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+position = Vector2(0, 3)
+target_position = Vector2(9, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
