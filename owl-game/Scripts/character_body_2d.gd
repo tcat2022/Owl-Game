@@ -1,7 +1,9 @@
 extends CharacterBody2D
 @onready var node_2d: Area2D = $"../Node2D"
 @onready var node_2d_2: Area2D = $"../Node2D2"
-
+@onready var timer: Timer = $Timer
+var proj_path = preload("res://Scenes/throw_spear_hit_box.tscn")
+var spear
 var hit_checkpoint = false
 var test := 0
 var mask_picked_up = false
@@ -11,10 +13,22 @@ var Gravity = 900
 const SPEED = 175.0
 const FRICTION = 1000
 const JUMP_VELOCITY = -250.0
+var Xviewport
+var Yviewport
+var LocalXmouseposition
+var Globalmouseposition
+var Scalartesting = 0.0
+var isAttacking = false	
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 
-
+	
 func _physics_process(delta: float) -> void:
+	
+	Xviewport = float (get_viewport().size.x)
+	LocalXmouseposition = get_local_mouse_position().x
+	Globalmouseposition = get_global_mouse_position()
+	Yviewport = float (get_viewport().size.y)
+	
 	
 	
 	if Input.is_action_just_pressed("pick up") and Globals.can_pick_up:
@@ -44,7 +58,7 @@ func _physics_process(delta: float) -> void:
 	#Gliding - Ze
 	if (velocity.y > 0) && (Input.is_action_pressed("jump")): #Checks for hold jump and falling
 		#print("ON!") #Check if statement is working
-		Gravity = 100 
+		Gravity = 100
 	else:
 		Gravity = 900
 
@@ -71,16 +85,14 @@ func _physics_process(delta: float) -> void:
 		
 	##Testing
 	
-	
 
+#============================================================================
 
 func EquipingWeapon() -> void:
 	##Equiping Weapon
 	if (Globals.SpearObtained && Globals.WeaponEquipped == false && Input.is_action_just_pressed("equip weapon")):
 		print("OMG I GOT A SPEAR")
 		Globals.WeaponEquipped = true
-		$WeaponHitBox.PROCESS_MODE_INHERIT
-		$WeaponHitBox.visible = true
 		
 	##Unequiping Weapon
 	elif (Globals.WeaponEquipped == true && Input.is_action_just_pressed("equip weapon")):
@@ -88,9 +100,6 @@ func EquipingWeapon() -> void:
 		Globals.WeaponEquipped = false
 		$WeaponHitBox.PROCESS_MODE_DISABLED
 		$WeaponHitBox.visible = false
-		$WeaponHitBox.position = Vector2(0, 0)
-		$WeaponHitBox/AnimatedSprite2D.rotation_degrees = 0
-		$WeaponHitBox/AnimatedSprite2D.position.x = 0
 
 	##Makes sure hitbox is disabled if weapon is not equipped
 	elif (Globals.WeaponEquipped == false):
@@ -102,24 +111,44 @@ func EquipingWeapon() -> void:
 		Combat()
 
 func Combat() -> void: #Function for Combat
+	#Left Click Attacking
+	if (Input.is_action_just_pressed("attack") && !isAttacking && is_on_floor()):
+		BasicAttack();
+	#Left Click Air
+	elif (Input.is_action_just_pressed("attack") && !isAttacking && !is_on_floor()):
+		AirAttack();
+	#Special Attack
+	elif (Input.is_action_just_pressed("special attack") && !isAttacking):
+		SpecialAttack();
 	
-	#Determines which side the screen mouse is on
-	if ((get_viewport().get_mouse_position().x >= get_viewport().size.x/2) && Input.is_action_just_pressed("attack")):
+func BasicAttack () -> void: #Function for Basic Attacking (Done?)
+	isAttacking = true
+	if (LocalXmouseposition >= 0):
+		$WeaponHitBox.PROCESS_MODE_INHERIT
+		$WeaponHitBox.visible = true
 		$WeaponHitBox.position = Vector2(21, 3)
-		$WeaponHitBox/AnimatedSprite2D.rotation_degrees = 90
-		$WeaponHitBox/AnimatedSprite2D.position.x = -25
+		timer.start()
 		print("right")
-	elif ((get_viewport().get_mouse_position().x <= get_viewport().size.x/2) && Input.is_action_just_pressed("attack")):
+		print(isAttacking)
+	elif (LocalXmouseposition < 0):
+		$WeaponHitBox.PROCESS_MODE_INHERIT
+		$WeaponHitBox.visible = true
 		$WeaponHitBox.position = Vector2(-21, 3)
-		$WeaponHitBox/AnimatedSprite2D.rotation_degrees = -90
-		$WeaponHitBox/AnimatedSprite2D.position.x = 25
+		timer.start()
 		print("left")
-		
+		print(isAttacking)
+	timer.start()
 	
+func AirAttack() -> void: #Function for Air Attacks (Placeholder)
+	pass
+
+func SpecialAttack() -> void: #Function for Special Attacks (WIP)
+	$Anchor/Spawner.shoot()
+	print("Pew!")
+#============================================================================
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	hit_checkpoint = true
-
 
 
 func _on_button_2_pressed() -> void:
@@ -136,3 +165,15 @@ func _on_button_pressed() -> void:
 		Saveload._save()
 		Saveload.contents_to_save.spear_collected = true
 		Saveload._save()
+
+
+func XYScalar(x: float, y: float) -> float:
+	Scalartesting = y/x
+	return Scalartesting
+	
+
+func _on_timer_timeout() -> void:
+	$WeaponHitBox.PROCESS_MODE_DISABLED
+	$WeaponHitBox.visible = false
+	isAttacking = false
+	print("TIME OUT")
