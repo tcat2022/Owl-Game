@@ -1,22 +1,22 @@
 [gd_scene load_steps=8 format=3 uid="uid://cajrn10wkx3tq"]
 
 [ext_resource type="Script" uid="uid://dtaybyjtxnre" path="res://Scripts/enemytscn.gd" id="1_cva8j"]
-[ext_resource type="Texture2D" uid="uid://dydyje56xwsbq" path="res://Assets/Sprites/wizzy.png" id="1_vd3dh"]
+[ext_resource type="Texture2D" uid="uid://b2ymcmqidsg1u" path="res://Assets/Sprites/blinky.png" id="2_cva8j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cva8j"]
 size = Vector2(15, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6pxyt"]
-atlas = ExtResource("1_vd3dh")
-region = Rect2(80, 112, 16, 16)
+atlas = ExtResource("2_cva8j")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ma38c"]
-atlas = ExtResource("1_vd3dh")
-region = Rect2(96, 112, 16, 16)
+atlas = ExtResource("2_cva8j")
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1q2d"]
-atlas = ExtResource("1_vd3dh")
-region = Rect2(112, 112, 16, 16)
+atlas = ExtResource("2_cva8j")
+region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bydwr"]
 animations = [{
