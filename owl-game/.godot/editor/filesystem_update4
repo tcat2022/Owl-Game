@@ -1,10 +1,2 @@
-res://Scenes/node_2d.tscn
-res://Scripts/character_body_2d.gd
-res://Scripts/enemytscn.gd
-res://Scenes/mask.tscn
-res://Scenes/owl.tscn
 res://Scenes/spear.tscn
-res://Scenes/belt.tscn
-res://conveyer_belt.tscn
-res://Scenes/weapon_hit_box.tscn
-res://Scenes/enemytscn.tscn
+res://Scripts/character_body_2d.gd
