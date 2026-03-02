@@ -3,3 +3,5 @@ res://Scenes/spawner.gd
 res://Scenes/Spawner_Anchor.gd
 res://Scenes/owl.tscn
 res://Scripts/character_body_2d.gd
+res://Scenes/throw_spear_hit_box.tscn
+res://Spearthrowing_hit_box.gd

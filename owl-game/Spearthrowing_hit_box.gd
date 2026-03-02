@@ -12,5 +12,10 @@ func _ready() -> void:
 	
 
 func _physics_process(delta: float) -> void:
-	velocity = Vector2(0, -SPEED).rotated(dir)
+	velocity = Vector2(0, -SPEED).rotated(dir)	
 	move_and_slide()
+	var collision = move_and_slide()
+	if collision:
+		print(collision.get_collider().name)
+	
+	

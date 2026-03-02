@@ -164,18 +164,18 @@ func BasicAttack () -> void: #Function for Basic Attacking (Done?)
 		$WeaponHitBox.position = Vector2(21, 3)
 		timer.start(0.2)
 		print("right")
-		animated_sprite_2d.flip_h= false
-		player_sprite.flip_h = false
-		animated_sprite_2d.play("default")
+		#animated_sprite_2d.flip_h= false
+		#player_sprite.flip_h = false
+		#animated_sprite_2d.play("default")
 	elif (LocalXmouseposition < 0):
 		$WeaponHitBox.PROCESS_MODE_INHERIT
 		$WeaponHitBox.visible = true
 		$WeaponHitBox.position = Vector2(-21, 3)
 		timer.start(0.2)
 		print("left")
-		player_sprite.flip_h = true
-		animated_sprite_2d.flip_h= true
-		animated_sprite_2d.play("default")
+		#player_sprite.flip_h = true
+		#animated_sprite_2d.flip_h= true
+		#animated_sprite_2d.play("default")
 	timer.start(0.2)
 	
 func AirAttack() -> void: #Function for Air Attacks (Placeholder)

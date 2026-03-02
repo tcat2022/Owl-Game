@@ -1,22 +1,55 @@
 [gd_scene format=3 uid="uid://col0ohp2w1x1"]
 
 [ext_resource type="Script" uid="uid://dbftbqpqsi51j" path="res://Spearthrowing_hit_box.gd" id="1_qkjpn"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_hqsfa"]
+[ext_resource type="Texture2D" uid="uid://d3fi31e51pjyy" path="res://Assets/Sprites/spear-Sheet.png" id="2_hqsfa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7b5n"]
-size = Vector2(92.5, 114.61142)
+size = Vector2(5, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4joh"]
+atlas = ExtResource("2_hqsfa")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4w2o"]
+atlas = ExtResource("2_hqsfa")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4qxn"]
+atlas = ExtResource("2_hqsfa")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qmmw"]
+atlas = ExtResource("2_hqsfa")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_baw5g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4joh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4w2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4qxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qmmw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2046614596]
 scale = Vector2(1.0055602, 0.99058336)
 script = ExtResource("1_qkjpn")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=587911098]
-position = Vector2(-0.08662033, 0.25155056)
-scale = Vector2(32.335506, -7.543308)
-texture = SubResource("CanvasTexture_hqsfa")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=223489874]
-position = Vector2(0.1633873, 0.13659793)
-scale = Vector2(0.3495732, -0.07218474)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=505600228]
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_d7b5n")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=124762414]
+sprite_frames = SubResource("SpriteFrames_baw5g")
+autoplay = "default"
