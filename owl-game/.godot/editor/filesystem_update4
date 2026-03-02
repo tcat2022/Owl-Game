@@ -1,2 +1,5 @@
-res://Scenes/spear.tscn
+res://Scenes/node_2d.tscn
+res://Scenes/spawner.gd
+res://Scenes/Spawner_Anchor.gd
+res://Scenes/owl.tscn
 res://Scripts/character_body_2d.gd

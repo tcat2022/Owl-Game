@@ -19,7 +19,16 @@ var LocalXmouseposition
 var Globalmouseposition
 var Scalartesting = 0.0
 var isAttacking = false	
-@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
+const PhaseBasicAttack = 0
+const PhaseAirAttack = 1
+const PhaseSpecialAttack = 2
+var SpecialButtonHeld = false
+var CombatPhase
+var Chargetimer = 0.0
+var SpecialAvaliable = true
+@onready var player_sprite: AnimatedSprite2D = $Sprite2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $WeaponHitBox/AnimatedSprite2D
+
 
 	
 func _physics_process(delta: float) -> void:
@@ -53,7 +62,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and doubleJump != 2:
 		doubleJump += 1
 		velocity.y = JUMP_VELOCITY
-		sprite_2d.play("idle")
+		player_sprite.play("idle")
 	
 	#Gliding - Ze
 	if (velocity.y > 0) && (Input.is_action_pressed("jump")): #Checks for hold jump and falling
@@ -66,16 +75,16 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
 	if direction:
-		sprite_2d.play("walking")
+		player_sprite.play("walking")
 		if direction == -1:
-			sprite_2d.flip_h = true
+			player_sprite.flip_h = true
 		else:
-			sprite_2d.flip_h = false
+			player_sprite.flip_h = false
 		
 		velocity.x = move_toward(velocity.x, SPEED * direction, FRICTION * delta)
 		
 	else:
-		sprite_2d.play("idle")
+		player_sprite.play("idle")
 		velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
 
 	position.x += test
@@ -83,9 +92,31 @@ func _physics_process(delta: float) -> void:
 
 	EquipingWeapon()
 	
-	##Testing2 - Ze
+	print(CombatPhase)
+	print(SpecialAvaliable)
+	
+	if (Globals.WeaponEquipped == true):
+		Combat()
+	
+	if (CombatPhase == PhaseSpecialAttack):
+		if (Input.is_action_pressed("special attack") && SpecialAvaliable):
+			SpecialButtonHeld = true
+		else:
+			SpecialButtonHeld = false
+			SpecialAvaliable = false
+			CombatPhase = null
+	
+	if (SpecialButtonHeld):
+		Chargetimer += delta
+		print(Chargetimer)
+	elif (Chargetimer > 0):
+		Charging(Chargetimer)
+		Chargetimer = 0
+		print(Chargetimer)
+		timer.start(2)
 		
 	##Testing
+	
 	
 
 #============================================================================
@@ -93,7 +124,7 @@ func _physics_process(delta: float) -> void:
 func EquipingWeapon() -> void:
 	##Equiping Weapon
 	if (Globals.SpearObtained && Globals.WeaponEquipped == false && Input.is_action_just_pressed("equip weapon")):
-		print("OMG I GOT A SPEAR")
+		print("OMG I GOT A SPEAR") 
 		Globals.WeaponEquipped = true
 		
 	##Unequiping Weapon
@@ -109,19 +140,21 @@ func EquipingWeapon() -> void:
 		$WeaponHitBox.visible = false
 
 	##Enable Combat System when weapon is equipped
-	if (Globals.WeaponEquipped == true):
-		Combat()
 
 func Combat() -> void: #Function for Combat
 	#Left Click Attacking
 	if (Input.is_action_just_pressed("attack") && !isAttacking && is_on_floor()):
+		CombatPhase = PhaseBasicAttack
+		print(CombatPhase)
 		BasicAttack();
+		print(CombatPhase)
 	#Left Click Air
 	elif (Input.is_action_just_pressed("attack") && !isAttacking && !is_on_floor()):
+		CombatPhase = PhaseAirAttack
 		AirAttack();
 	#Special Attack
 	elif (Input.is_action_just_pressed("special attack") && !isAttacking):
-		SpecialAttack();
+		CombatPhase = PhaseSpecialAttack
 	
 func BasicAttack () -> void: #Function for Basic Attacking (Done?)
 	isAttacking = true
@@ -129,25 +162,39 @@ func BasicAttack () -> void: #Function for Basic Attacking (Done?)
 		$WeaponHitBox.PROCESS_MODE_INHERIT
 		$WeaponHitBox.visible = true
 		$WeaponHitBox.position = Vector2(21, 3)
-		timer.start()
+		timer.start(0.2)
 		print("right")
-		print(isAttacking)
+		animated_sprite_2d.flip_h= false
+		player_sprite.flip_h = false
+		animated_sprite_2d.play("default")
 	elif (LocalXmouseposition < 0):
 		$WeaponHitBox.PROCESS_MODE_INHERIT
 		$WeaponHitBox.visible = true
 		$WeaponHitBox.position = Vector2(-21, 3)
-		timer.start()
+		timer.start(0.2)
 		print("left")
-		print(isAttacking)
-	timer.start()
+		player_sprite.flip_h = true
+		animated_sprite_2d.flip_h= true
+		animated_sprite_2d.play("default")
+	timer.start(0.2)
 	
 func AirAttack() -> void: #Function for Air Attacks (Placeholder)
 	pass
+	
+	
 
-func SpecialAttack() -> void: #Function for Special Attacks (WIP)
-	$Anchor/Spawner.shoot()
-	print("Pew!")
 #============================================================================
+
+func Charging(ButtonHeld: float) -> void:
+	if (ButtonHeld < 1):
+		$Anchor/Spawner.ProjSpeed = 250
+		$Anchor/Spawner.shoot()
+	elif (ButtonHeld < 2):
+		$Anchor/Spawner.ProjSpeed = 500
+		$Anchor/Spawner.shoot()
+	elif (ButtonHeld > 2):
+		$Anchor/Spawner.ProjSpeed = 1000
+		$Anchor/Spawner.shoot()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	hit_checkpoint = true
@@ -175,7 +222,19 @@ func XYScalar(x: float, y: float) -> float:
 	
 
 func _on_timer_timeout() -> void:
-	$WeaponHitBox.PROCESS_MODE_DISABLED
-	$WeaponHitBox.visible = false
-	isAttacking = false
-	print("TIME OUT")
+	if (CombatPhase == 0):
+		$WeaponHitBox.PROCESS_MODE_DISABLED
+		$WeaponHitBox.visible = false
+		isAttacking = false
+		print("TIME OUT")
+		CombatPhase = null
+	elif (CombatPhase == 1):
+		pass
+	else:
+		CombatPhase = null
+		
+	if (!SpecialAvaliable):
+		print("TIME OUT SPECIAL")
+		SpecialAvaliable = true
+	else:
+		CombatPhase = null
