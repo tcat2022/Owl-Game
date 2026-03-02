@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ywkoc8gxcb1o" path="res://Scenes/weapon_hit_box.tscn" id="2_fg7i4"]
 [ext_resource type="Script" uid="uid://cs2pb2088rrqv" path="res://Scenes/spawner.gd" id="2_gwne5"]
 [ext_resource type="PackedScene" uid="uid://b06iva1apde4e" path="res://Scenes/spear.tscn" id="2_p20hg"]
+[ext_resource type="PackedScene" uid="uid://cajrn10wkx3tq" path="res://Scenes/enemytscn.tscn" id="3_hpu6p"]
 [ext_resource type="Texture2D" uid="uid://davn2rl064042" path="res://Scripts/Sprite-0001.png" id="4_p20hg"]
 [ext_resource type="PackedScene" uid="uid://cyh5py1yadx3s" path="res://conveyer_belt.tscn" id="5_he4j0"]
 [ext_resource type="PackedScene" uid="uid://cfrho8govafhy" path="res://Scenes/belt.tscn" id="6_85gyg"]
@@ -235,6 +236,8 @@ _data = {
 
 [node name="owl" parent="." unique_id=945687252 instance=ExtResource("1_hvaui")]
 position = Vector2(95, 151)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Spawner" parent="owl/Anchor" parent_id_path=PackedInt32Array(945687252, 1783172440) index="0" unique_id=1175435403]
 script = ExtResource("2_gwne5")
@@ -246,6 +249,9 @@ limit_bottom = 215
 
 [node name="WeaponHitBox" parent="owl" unique_id=75900575 instance=ExtResource("2_fg7i4")]
 scale = Vector2(0.46859327, 0.6869693)
+
+[node name="AnimatedSprite2D" parent="owl/WeaponHitBox" index="3" unique_id=916468571]
+scale = Vector2(1.9469845, 0.99719083)
 
 [node name="Timer" type="Timer" parent="owl" unique_id=1388281894]
 one_shot = true
@@ -410,6 +416,9 @@ shape = SubResource("RectangleShape2D_fg7i4")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="secret" unique_id=1542378541]
 libraries/ = SubResource("AnimationLibrary_fg7i4")
 
+[node name="Area2D3" parent="." unique_id=260380919 instance=ExtResource("3_hpu6p")]
+position = Vector2(146, 172)
+
 [connection signal="timeout" from="owl/Timer" to="owl" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Node2D" to="owl" method="_on_node_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="owl" method="_on_area_2d_body_entered"]
@@ -419,4 +428,5 @@ libraries/ = SubResource("AnimationLibrary_fg7i4")
 [connection signal="body_entered" from="secret" to="secret" method="_on_body_entered"]
 
 [editable path="owl"]
+[editable path="owl/WeaponHitBox"]
 [editable path="Node2D2"]

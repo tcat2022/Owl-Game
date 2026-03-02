@@ -5,3 +5,4 @@ res://Scenes/owl.tscn
 res://Scripts/character_body_2d.gd
 res://Scenes/throw_spear_hit_box.tscn
 res://Spearthrowing_hit_box.gd
+res://Scenes/weapon_hit_box.tscn

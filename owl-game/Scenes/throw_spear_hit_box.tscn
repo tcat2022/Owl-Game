@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d3fi31e51pjyy" path="res://Assets/Sprites/spear-Sheet.png" id="2_hqsfa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7b5n"]
-size = Vector2(5, 32)
+size = Vector2(5, 32.152096)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4joh"]
 atlas = ExtResource("2_hqsfa")
@@ -44,12 +44,17 @@ animations = [{
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2046614596]
 scale = Vector2(1.0055602, 0.99058336)
+collision_mask = 3
 script = ExtResource("1_qkjpn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=505600228]
-position = Vector2(0.5, 0)
+position = Vector2(0.9944705, -16.07605)
+rotation = 3.1398096
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_d7b5n")
+one_way_collision = true
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=124762414]
+position = Vector2(0.04423532, -16.304195)
 sprite_frames = SubResource("SpriteFrames_baw5g")
 autoplay = "default"
