@@ -37,6 +37,9 @@ window/stretch/aspect="expand"
 [global_group]
 
 player=""
+enemy=""
+weaponhitbox=""
+Ground="Ground"
 
 [input]
 

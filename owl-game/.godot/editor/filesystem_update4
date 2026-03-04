@@ -1,8 +1,4 @@
-res://Scenes/node_2d.tscn
-res://Scenes/spawner.gd
-res://Scenes/Spawner_Anchor.gd
-res://Scenes/owl.tscn
+res://Scripts/enemytscn.gd
+res://Scenes/enemytscn.tscn
 res://Scripts/character_body_2d.gd
-res://Scenes/throw_spear_hit_box.tscn
-res://Spearthrowing_hit_box.gd
-res://Scenes/weapon_hit_box.tscn
+res://Scenes/node_2d.tscn

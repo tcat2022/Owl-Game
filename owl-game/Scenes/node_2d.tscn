@@ -239,6 +239,8 @@ position = Vector2(95, 151)
 collision_layer = 3
 collision_mask = 3
 
+[node name="CollisionShape2D" parent="owl" index="1" unique_id=683660135 groups=["player"]]
+
 [node name="Spawner" parent="owl/Anchor" parent_id_path=PackedInt32Array(945687252, 1783172440) index="0" unique_id=1175435403]
 script = ExtResource("2_gwne5")
 
@@ -247,11 +249,17 @@ zoom = Vector2(3.6, 3.6)
 limit_left = 0
 limit_bottom = 215
 
-[node name="WeaponHitBox" parent="owl" unique_id=75900575 instance=ExtResource("2_fg7i4")]
+[node name="WeaponHitBox" parent="owl" unique_id=75900575 groups=["weaponhitbox"] instance=ExtResource("2_fg7i4")]
+process_mode = 0
+light_mask = 3
+visibility_layer = 3
 scale = Vector2(0.46859327, 0.6869693)
 
-[node name="AnimatedSprite2D" parent="owl/WeaponHitBox" index="3" unique_id=916468571]
+[node name="AnimatedSprite2D" parent="owl/WeaponHitBox" index="1" unique_id=916468571]
 scale = Vector2(1.9469845, 0.99719083)
+
+[node name="CollisionShape2D" parent="owl/WeaponHitBox" index="3" unique_id=50810104 groups=["weaponhitbox"]]
+process_mode = 3
 
 [node name="Timer" type="Timer" parent="owl" unique_id=1388281894]
 one_shot = true
@@ -259,7 +267,7 @@ one_shot = true
 [node name="Node2D2" parent="." unique_id=528826720 instance=ExtResource("2_p20hg")]
 position = Vector2(845, 162)
 
-[node name="TileMap" type="TileMap" parent="." unique_id=297539017]
+[node name="TileMap" type="TileMap" parent="." unique_id=297539017 groups=["Ground"]]
 position = Vector2(50, -62)
 tile_set = SubResource("TileSet_rj586")
 format = 2
@@ -283,7 +291,7 @@ scroll_offset = Vector2(188, 74)
 repeat_size = Vector2(640, 0)
 repeat_times = 3
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1173115029]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1173115029 groups=["Ground"]]
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=598483011]
 motion_scale = Vector2(0.1, 1)
@@ -416,8 +424,14 @@ shape = SubResource("RectangleShape2D_fg7i4")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="secret" unique_id=1542378541]
 libraries/ = SubResource("AnimationLibrary_fg7i4")
 
-[node name="Area2D3" parent="." unique_id=260380919 instance=ExtResource("3_hpu6p")]
-position = Vector2(146, 172)
+[node name="enemy" parent="." unique_id=1107126510 instance=ExtResource("3_hpu6p")]
+position = Vector2(137, 170)
+input_pickable = false
+priority = 1
+
+[node name="RayCast2D" parent="enemy" index="2" unique_id=486966867 groups=["enemy"]]
+
+[node name="RayCast2D2" parent="enemy" index="3" unique_id=462030539 groups=["enemy"]]
 
 [connection signal="timeout" from="owl/Timer" to="owl" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Node2D" to="owl" method="_on_node_2d_body_entered"]
@@ -426,7 +440,10 @@ position = Vector2(146, 172)
 [connection signal="pressed" from="CanvasLayer/Button" to="owl" method="_on_button_pressed"]
 [connection signal="body_entered" from="Area2D2" to="owl" method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="secret" to="secret" method="_on_body_entered"]
+[connection signal="area_entered" from="enemy" to="owl" method="_on_enemy_area_entered"]
+[connection signal="area_entered" from="enemy" to="enemy" method="_on_area_entered"]
 
 [editable path="owl"]
 [editable path="owl/WeaponHitBox"]
 [editable path="Node2D2"]
+[editable path="enemy"]

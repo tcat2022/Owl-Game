@@ -26,10 +26,18 @@ var SpecialButtonHeld = false
 var CombatPhase
 var Chargetimer = 0.0
 var SpecialAvaliable = true
+
+var Health
+var MaxHealth = 4
+
 @onready var player_sprite: AnimatedSprite2D = $Sprite2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $WeaponHitBox/AnimatedSprite2D
 
-
+func _ready() -> void:
+	Health = MaxHealth
+	Globals.WeaponEquipped = false
+	$WeaponHitBox.visible = false
+	
 	
 func _physics_process(delta: float) -> void:
 	
@@ -89,55 +97,66 @@ func _physics_process(delta: float) -> void:
 
 	position.x += test
 	move_and_slide()
-
+	
+	
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+			
+#==================================================================#
+#Combat System:
 	EquipingWeapon()
 	
-	print(CombatPhase)
-	print(SpecialAvaliable)
+	#print(CombatPhase)
+	#print(SpecialAvaliable)
 	
-	if (Globals.WeaponEquipped == true):
+	if (Globals.WeaponEquipped == true): #Starts Combat if Weapon is Equipped
 		Combat()
 	
-	if (CombatPhase == PhaseSpecialAttack):
-		if (Input.is_action_pressed("special attack") && SpecialAvaliable):
+	#Charging System
+	if (CombatPhase == PhaseSpecialAttack): #Sets Combatphase to Special Attack
+		if (Input.is_action_pressed("special attack") && SpecialAvaliable): #Checks whether mouse button is held
 			SpecialButtonHeld = true
 		else:
 			SpecialButtonHeld = false
 			SpecialAvaliable = false
 			CombatPhase = null
 	
-	if (SpecialButtonHeld):
-		Chargetimer += delta
+	
+	if (SpecialButtonHeld): #If the mouse button is held:
+		Chargetimer += delta #Checks how long button is held
 		print(Chargetimer)
-	elif (Chargetimer > 0):
+	elif (Chargetimer > 0): #If mouse let go
 		Charging(Chargetimer)
-		Chargetimer = 0
+		Chargetimer = 0 #Sets Charging Timer to 0
 		print(Chargetimer)
-		timer.start(2)
-		
-	##Testing
+		timer.start(2) #Cooldown
+#===========================================================================#
+# Health System:
+
+	HealthSystem()
+#===========================================================================#
+# Testing:
 	
 	
 
 #============================================================================
 
-func EquipingWeapon() -> void:
+func EquipingWeapon() -> void: #Function for Equiping Weapon
 	##Equiping Weapon
 	if (Globals.SpearObtained && Globals.WeaponEquipped == false && Input.is_action_just_pressed("equip weapon")):
-		print("OMG I GOT A SPEAR") 
+		print("OMG I GOT A SPEAR") #Spear is equipped... Ok come on that one's obvious
 		Globals.WeaponEquipped = true
 		
 	##Unequiping Weapon
 	elif (Globals.WeaponEquipped == true && Input.is_action_just_pressed("equip weapon")):
 		print("There goes my spear :c")
 		Globals.WeaponEquipped = false
-		$WeaponHitBox.PROCESS_MODE_DISABLED
 		$WeaponHitBox.visible = false
 
 	##Makes sure hitbox is disabled if weapon is not equipped
 	elif (Globals.WeaponEquipped == false):
-		$WeaponHitBox.PROCESS_MODE_DISABLED
 		$WeaponHitBox.visible = false
+		$WeaponHitBox/CollisionShape2D.disabled = true
 
 	##Enable Combat System when weapon is equipped
 
@@ -157,19 +176,19 @@ func Combat() -> void: #Function for Combat
 		CombatPhase = PhaseSpecialAttack
 	
 func BasicAttack () -> void: #Function for Basic Attacking (Done?)
-	isAttacking = true
-	if (LocalXmouseposition >= 0):
-		$WeaponHitBox.PROCESS_MODE_INHERIT
+	isAttacking = true #Makes sure there's no overlap
+	if (LocalXmouseposition >= 0): #Checks left or right
 		$WeaponHitBox.visible = true
-		$WeaponHitBox.position = Vector2(21, 3)
-		timer.start(0.2)
-		print("right")
-		animated_sprite_2d.flip_h= false
-		player_sprite.flip_h = false
-		animated_sprite_2d.play("default")
+		$WeaponHitBox.position = Vector2(21, 3) #Changes Hitbox Position
+		$WeaponHitBox/CollisionShape2D.disabled = false
+		timer.start(0.2) #Cooldown
+		print("right") 
+		animated_sprite_2d.flip_h= false #Flips or unflips slash animation
+		player_sprite.flip_h = false #Flips or unflips player animation
+		animated_sprite_2d.play("default") #Sets animation to Slash
 	elif (LocalXmouseposition < 0):
-		$WeaponHitBox.PROCESS_MODE_INHERIT
 		$WeaponHitBox.visible = true
+		$WeaponHitBox/CollisionShape2D.disabled = false
 		$WeaponHitBox.position = Vector2(-21, 3)
 		timer.start(0.2)
 		print("left")
@@ -185,10 +204,10 @@ func AirAttack() -> void: #Function for Air Attacks (Placeholder)
 
 #============================================================================
 
-func Charging(ButtonHeld: float) -> void:
-	if (ButtonHeld < 1):
-		$Anchor/Spawner.ProjSpeed = 250
-		$Anchor/Spawner.shoot()
+func Charging(ButtonHeld: float) -> void: #Function for Charging
+	if (ButtonHeld < 1): #Checks "Stages" of charge
+		$Anchor/Spawner.ProjSpeed = 250 #Changes Projectile Speed
+		$Anchor/Spawner.shoot() #Shoots Projectile
 	elif (ButtonHeld < 2):
 		$Anchor/Spawner.ProjSpeed = 500
 		$Anchor/Spawner.shoot()
@@ -222,9 +241,9 @@ func XYScalar(x: float, y: float) -> float:
 	
 
 func _on_timer_timeout() -> void:
-	if (CombatPhase == 0):
-		$WeaponHitBox.PROCESS_MODE_DISABLED
+	if (CombatPhase == 0): #Disables Hitbox for Basic Attack
 		$WeaponHitBox.visible = false
+		$WeaponHitBox/CollisionShape2D.disabled = true
 		isAttacking = false
 		print("TIME OUT")
 		CombatPhase = null
@@ -233,8 +252,17 @@ func _on_timer_timeout() -> void:
 	else:
 		CombatPhase = null
 		
-	if (!SpecialAvaliable):
+	if (!SpecialAvaliable): #Makes Special Avaliable
 		print("TIME OUT SPECIAL")
 		SpecialAvaliable = true
 	else:
 		CombatPhase = null
+
+func HealthSystem() -> void:
+	if (Health <= 0):
+		get_tree().reload_current_scene()
+	pass
+	
+func Hurt(Damage: int):
+	Health -= Damage
+	print(Health)
