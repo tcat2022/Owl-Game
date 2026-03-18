@@ -26,7 +26,7 @@ var SpecialButtonHeld = false
 var CombatPhase
 var Chargetimer = 0.0
 var SpecialAvaliable = true
-
+var direction
 var Health
 var MaxHealth = 4
 
@@ -37,6 +37,7 @@ func _ready() -> void:
 	Health = MaxHealth
 	Globals.WeaponEquipped = false
 	$WeaponHitBox.visible = false
+	Globals.PlayerDamage = Vector2(150,-100)
 	
 	
 func _physics_process(delta: float) -> void:
@@ -81,7 +82,7 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("left", "right")
+	direction = Input.get_axis("left", "right")
 	if direction:
 		player_sprite.play("walking")
 		if direction == -1:
@@ -263,6 +264,9 @@ func HealthSystem() -> void:
 		get_tree().reload_current_scene()
 	pass
 	
-func Hurt(Damage: int):
+func Hurt(Damage: int,Knockback: Vector2, Direction: int):
 	Health -= Damage
+	print(velocity)
+	velocity.x = (velocity.x + Knockback.x) * (Direction)
+	velocity.y = velocity.y + Knockback.y
 	print(Health)

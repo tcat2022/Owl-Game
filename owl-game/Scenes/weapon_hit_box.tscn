@@ -5,11 +5,43 @@
 
 [sub_resource type="GDScript" id="GDScript_c7qnp"]
 script/source = "extends Area2D
+var Knockback = Vector2()
+var Damage = 0
+var DMGUpgrade
+var DMGStage
+var KnockbackUpgrade = Vector2(25, -25)
+var	KnockbackStage = 0
+var Playerdirection
 
+var PlayerDamage
+var PlayerKnockback = Vector2()
 
+func _ready() -> void:
+	DMGStage = 0
+	DMGUpgrade = 1
+	
+
+func _physics_process(delta: float) -> void:
+	Playerdirection = $\"..\".direction
+	PlayerDamage = PlayerDamageSystem(Damage, DMGUpgrade, DMGStage)
+	PlayerKnockback = PlayerKnockbackSystem(Knockback, KnockbackUpgrade, KnockbackStage)
+	
+
+func PlayerDamageSystem(Damage: int,DMGUpgrade: int, DMGStage: int):
+	
+	Damage = 1 + (DMGStage * DMGUpgrade)
+	return Damage
+	
+func PlayerKnockbackSystem(Knockback: Vector2, KnockbackUpgrade: Vector2, 
+	KnockbackStage: int) -> Vector2:
+	
+	Knockback = Vector2(150,-100)
+	return Knockback
+	
 func _on_body_entered(body: Node2D) -> void:
-	if is_in_group(\"enemy\"):
-		print(\"HIT\")
+	if body.is_in_group(\"enemy\"):
+		if body.has_method(\"EnemyKnockBack\"):
+			body.EnemyKnockBack(PlayerKnockback, Playerdirection)
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m0edj"]
