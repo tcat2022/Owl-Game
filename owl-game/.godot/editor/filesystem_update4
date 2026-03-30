@@ -1,1 +1,8 @@
+res://Scenes/throw_spear_hit_box.tscn
+res://Scripts/enemytscn.gd
 res://Scenes/enemytscn.tscn
+res://Scenes/detection_hitbox.gd
+res://Scenes/node_2d.tscn
+res://Scripts/character_body_2d.gd
+res://Scenes/enemyhitbox.gd
+res://Scenes/weapon_hit_box.tscn

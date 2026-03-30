@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bwxylcfkvx2p0" path="res://Scenes/detection_hitbox.gd" id="3_ma38c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cva8j"]
-size = Vector2(23.14959, 16.386742)
+size = Vector2(23.14959, 12.104317)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6pxyt"]
 atlas = ExtResource("1_vd3dh")
@@ -38,7 +38,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6pxyt"]
-size = Vector2(41.800365, 77.56755)
+size = Vector2(52.60663, 77.56755)
 
 [node name="enemy" type="CharacterBody2D" unique_id=1634169121 groups=["enemy"]]
 scale = Vector2(0.97716045, 1.018134)
@@ -46,12 +46,21 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_cva8j")
 
+[node name="AttackCooldown" type="Timer" parent="." unique_id=527874223]
+one_shot = true
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=1139054967]
+one_shot = true
+
+[node name="Timer" type="Timer" parent="." unique_id=1696310231]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=146608256 groups=["enemy"]]
 physics_interpolation_mode = 1
-visible = false
-position = Vector2(0, -1)
-rotation = -3.1415925
+position = Vector2(-3.233142e-07, 1.1412129)
+rotation = -1.5707964
+scale = Vector2(0.5906504, 1.7816588)
 shape = SubResource("RectangleShape2D_cva8j")
+one_way_collision = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1219913316]
 sprite_frames = SubResource("SpriteFrames_bydwr")
@@ -70,8 +79,8 @@ target_position = Vector2(12, 0)
 script = ExtResource("3_ma38c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionHitbox" unique_id=258668257]
-position = Vector2(78, 0)
-scale = Vector2(3.7188516, 2.4325478)
+position = Vector2(57.906574, 0)
+scale = Vector2(3.718852, 2.4325478)
 shape = SubResource("RectangleShape2D_6pxyt")
 
 [node name="hitbox" type="Area2D" parent="." unique_id=969210329]
@@ -83,6 +92,9 @@ position = Vector2(0.45822093, -1.8735973)
 scale = Vector2(1.1516488, 1.2043589)
 shape = SubResource("RectangleShape2D_cva8j")
 
+[connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="DetectionHitbox" to="DetectionHitbox" method="_on_body_entered"]
 [connection signal="body_exited" from="DetectionHitbox" to="DetectionHitbox" method="_on_body_exited"]
 [connection signal="area_entered" from="hitbox" to="hitbox" method="_on_area_entered"]

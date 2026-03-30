@@ -47,14 +47,14 @@ scale = Vector2(1.0055602, 0.99058336)
 collision_mask = 3
 script = ExtResource("1_qkjpn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=505600228]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=505600228 groups=["weaponhitbox"]]
 position = Vector2(0.9944705, -16.07605)
 rotation = 3.138801
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_d7b5n")
 one_way_collision = true
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=124762414]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=124762414 groups=["weaponhitbox"]]
 position = Vector2(0.04423532, -16.304195)
 sprite_frames = SubResource("SpriteFrames_baw5g")
 autoplay = "default"

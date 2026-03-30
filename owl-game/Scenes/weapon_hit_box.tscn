@@ -11,37 +11,35 @@ var DMGUpgrade
 var DMGStage
 var KnockbackUpgrade = Vector2(25, -25)
 var	KnockbackStage = 0
-var Playerdirection
 
 var PlayerDamage
 var PlayerKnockback = Vector2()
 
 func _ready() -> void:
-	DMGStage = 0
+	DMGStage = 0 #Basis for upgrade?
 	DMGUpgrade = 1
 	
 
 func _physics_process(delta: float) -> void:
-	Playerdirection = $\"..\".direction
-	PlayerDamage = PlayerDamageSystem(Damage, DMGUpgrade, DMGStage)
-	PlayerKnockback = PlayerKnockbackSystem(Knockback, KnockbackUpgrade, KnockbackStage)
+	PlayerDamage = PlayerDamageSystem(Damage, DMGUpgrade, DMGStage) #Determiness Damage
+	PlayerKnockback = PlayerKnockbackSystem(Knockback, KnockbackUpgrade, KnockbackStage) #Determines Knockback)
 	
 
-func PlayerDamageSystem(Damage: int,DMGUpgrade: int, DMGStage: int):
+func PlayerDamageSystem(Damage: int,DMGUpgrade: int, DMGStage: int): #Damage Function
 	
-	Damage = 1 + (DMGStage * DMGUpgrade)
+	Damage = 1 + (DMGStage * DMGUpgrade) #Calculates Damage
 	return Damage
 	
 func PlayerKnockbackSystem(Knockback: Vector2, KnockbackUpgrade: Vector2, 
-	KnockbackStage: int) -> Vector2:
+	KnockbackStage: int) -> Vector2: #Knockback Function
 	
-	Knockback = Vector2(150,-100)
+	Knockback = Vector2(150,-100) #Calculates knockback
 	return Knockback
 	
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group(\"enemy\"):
-		if body.has_method(\"EnemyKnockBack\"):
-			body.EnemyKnockBack(PlayerKnockback, Playerdirection)
+	if body.is_in_group(\"enemy\"): #Checks if hitbox collides with enemy
+		if body.has_method(\"EnemyKnockBack\"): #Checks if enemy can be knockbacked
+			body.EnemyKnockBack(PlayerKnockback) #Sends player knockback value to enemy function
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m0edj"]

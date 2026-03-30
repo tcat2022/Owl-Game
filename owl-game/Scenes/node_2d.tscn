@@ -425,7 +425,7 @@ shape = SubResource("RectangleShape2D_fg7i4")
 libraries/ = SubResource("AnimationLibrary_fg7i4")
 
 [node name="enemy" parent="." unique_id=1634169121 instance=ExtResource("3_hpu6p")]
-position = Vector2(140.00002, 138)
+position = Vector2(266, 130.00002)
 rotation = -0.0024928013
 
 [connection signal="timeout" from="owl/Timer" to="owl" method="_on_timer_timeout"]

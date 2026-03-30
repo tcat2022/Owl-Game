@@ -28,7 +28,7 @@ var Chargetimer = 0.0
 var SpecialAvaliable = true
 var direction
 var Health
-var MaxHealth = 4
+var MaxHealth = 10
 
 @onready var player_sprite: AnimatedSprite2D = $Sprite2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $WeaponHitBox/AnimatedSprite2D
@@ -265,8 +265,8 @@ func HealthSystem() -> void:
 	pass
 	
 func Hurt(Damage: int,Knockback: Vector2, Direction: int):
-	Health -= Damage
+	Health -= Damage #Subtracts damage from player health
 	print(velocity)
-	velocity.x = (velocity.x + Knockback.x) * (Direction)
+	velocity.x = (velocity.x + Knockback.x) * (Direction) #Player knockback from enemy
 	velocity.y = velocity.y + Knockback.y
 	print(Health)
