@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dtaybyjtxnre" path="res://Scripts/enemytscn.gd" id="1_cva8j"]
 [ext_resource type="Texture2D" uid="uid://dydyje56xwsbq" path="res://Assets/Sprites/wizzy.png" id="1_vd3dh"]
+[ext_resource type="PackedScene" uid="uid://qsp0r46ax8n" path="res://Scenes/health_bar.tscn" id="2_y1q2d"]
 [ext_resource type="Script" uid="uid://by8j2v0vi18us" path="res://Scenes/enemyhitbox.gd" id="3_6pxyt"]
 [ext_resource type="Script" uid="uid://bwxylcfkvx2p0" path="res://Scenes/detection_hitbox.gd" id="3_ma38c"]
 
@@ -45,6 +46,13 @@ scale = Vector2(0.97716045, 1.018134)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_cva8j")
+
+[node name="ProgressBar" parent="." unique_id=1779117193 node_paths=PackedStringArray("combatant") instance=ExtResource("2_y1q2d")]
+offset_left = -8.186988
+offset_top = -4.9109454
+offset_right = 10.233735
+offset_bottom = -2.4656725
+combatant = NodePath("../hitbox")
 
 [node name="AttackCooldown" type="Timer" parent="." unique_id=527874223]
 one_shot = true

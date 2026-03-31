@@ -1,4 +1,7 @@
 extends CharacterBody2D
+
+signal healthChanged # connects to health bar
+
 @onready var node_2d: Area2D = $"../Node2D"
 @onready var node_2d_2: Area2D = $"../Node2D2"
 @onready var timer: Timer = $Timer
@@ -266,6 +269,7 @@ func HealthSystem() -> void:
 	
 func Hurt(Damage: int,Knockback: Vector2, Direction: int):
 	Health -= Damage #Subtracts damage from player health
+	healthChanged.emit() #emits player is damaged for health bar
 	print(velocity)
 	velocity.x = (velocity.x + Knockback.x) * (Direction) #Player knockback from enemy
 	velocity.y = velocity.y + Knockback.y

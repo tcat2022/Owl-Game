@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cm3ep2s7lplt4"]
 
 [ext_resource type="Script" uid="uid://bwweb5x4yi2re" path="res://Scripts/character_body_2d.gd" id="1_dm34n"]
+[ext_resource type="PackedScene" uid="uid://qsp0r46ax8n" path="res://Scenes/health_bar.tscn" id="2_1vkuq"]
 [ext_resource type="Texture2D" uid="uid://dp7ymswywu6iw" path="res://Assets/Sprites/idle-ani.png" id="2_eyas1"]
 [ext_resource type="Texture2D" uid="uid://7ybtoms4i262" path="res://Assets/Sprites/owlAni.png" id="3_7aicp"]
 [ext_resource type="Script" uid="uid://byfhs5ipk3hg7" path="res://Scenes/Spawner_Anchor.gd" id="4_dbcsv"]
@@ -81,6 +82,13 @@ size = Vector2(14, 6.875)
 
 [node name="owl" type="CharacterBody2D" unique_id=1668035102 groups=["player"]]
 script = ExtResource("1_dm34n")
+
+[node name="ProgressBar" parent="." unique_id=1779117193 node_paths=PackedStringArray("combatant") instance=ExtResource("2_1vkuq")]
+offset_left = -9.0
+offset_top = -16.0
+offset_right = 11.0
+offset_bottom = -14.0
+combatant = NodePath("..")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=708810983]
 sprite_frames = SubResource("SpriteFrames_q04jw")
