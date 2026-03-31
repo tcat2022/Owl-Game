@@ -1,10 +1,10 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1774917280
+::res://::1774927133
 conveyer_belt.tscn::PackedScene::6473673857484879038::1772483988::0::1::::<><><>0<>0<><>::uid://dgel6bedihihn::::res://static_body_2d.gd<>uid://d1c0scfqan0st::::res://Assets/Sprites/belt.png
 Spearthrowing_hit_box.gd::GDScript::7240929056441141525::1772638345::0::1::::<>CharacterBody2D<><>0<>0<><>::
 static_body_2d.gd::GDScript::7589375929305068851::1773844188::0::1::::<>StaticBody2D<><>0<>0<><>::
 ::res://Assets/::1769016290
-::res://Assets/Sounds/::1774919022
+::res://Assets/Sounds/::1774919023
 default_bus_layout.tres::AudioBusLayout::3075923912532353289::1771436774::0::1::::<><><>0<>0<><>::
 GDC Awakening.mp3::AudioStreamMP3::1655629429130637381::1771436774::1771436774::1::::<><><>0<>0<>4a8e5f53a1dfdea5e183cd1e567e637c<>res://.godot/imported/GDC Awakening.mp3-1159594ec1a1989a919a6677bffb86f7.mp3str::
 GDC Bonkers Soundtrack Concept.mp3::AudioStreamMP3/AudioStreamMP3::5664461093234439531::1771436774::1771436774::1::::<><><>0<>0<>aed33e567e0bf712e6375023bfaa1dc4<>res://.godot/imported/GDC Bonkers Soundtrack Concept.mp3-26c30f67dd96af819def23d0c3bbdf3c.mp3str::
@@ -30,15 +30,16 @@ stars.png::CompressedTexture2D/CompressedTexture2D::3499712194980562077::1771436
 2nd_back_level.PNG::CompressedTexture2D::2938172885425061297::1771436774::1771436774::1::::<><><>0<>0<>768f0244b5fa971e0cd180767d51d6b4<>res://.godot/imported/2nd_back_level.PNG-124355094ad384bacccb5cd265655861.ctex::
 3rd_back_layer.PNG::CompressedTexture2D::7430027950441423436::1771436774::1771436774::1::::<><><>0<>0<>f8e0c24b30bddc78baf99aed8af58675<>res://.godot/imported/3rd_back_layer.PNG-665750e27f705f3e593d864a6c930462.ctex::
 Background.PNG::CompressedTexture2D::1386359787974807376::1771436774::1771436774::1::::<><><>0<>0<>1427bef81b87a931c29750c5057eccd7<>res://.godot/imported/Background.PNG-ded0cf735aa5328635ffbc667f462521.ctex::
-::res://Scenes/::1774918975
+::res://Scenes/::1774926907
 belt.tscn::PackedScene::5159331770662960298::1772483988::0::1::::<><><>0<>0<><>::uid://d1c0scfqan0st::::res://Assets/Sprites/belt.png
 detection_hitbox.gd::GDScript::3979532896886612747::1774917212::0::1::::<>Area2D<><>0<>0<><>::
-enemyhitbox.gd::GDScript::4139673208836540014::1774917212::0::1::::<>Area2D<><>0<>0<><>::
-enemytscn.tscn::PackedScene::4792477576611627486::1774917212::0::1::::<><><>0<>0<><>::uid://dtaybyjtxnre::::res://Scripts/enemytscn.gd<>uid://dydyje56xwsbq::::res://Assets/Sprites/wizzy.png<>uid://by8j2v0vi18us::::res://Scenes/enemyhitbox.gd<>uid://bwxylcfkvx2p0::::res://Scenes/detection_hitbox.gd
+enemyhitbox.gd::GDScript::4139673208836540014::1774923910::0::1::::<>Area2D<><>0<>0<><>::
+enemytscn.tscn::PackedScene::4792477576611627486::1774925100::0::1::::<><><>0<>0<><>::uid://dtaybyjtxnre::::res://Scripts/enemytscn.gd<>uid://dydyje56xwsbq::::res://Assets/Sprites/wizzy.png<>uid://qsp0r46ax8n::::res://Scenes/health_bar.tscn<>uid://by8j2v0vi18us::::res://Scenes/enemyhitbox.gd<>uid://bwxylcfkvx2p0::::res://Scenes/detection_hitbox.gd
+health_bar.gd::GDScript::2746137802193426203::1774926502::0::1::::<>ProgressBar<><>0<>0<><>::
+health_bar.tscn::PackedScene::34151077547836315::1774925050::0::1::::<><><>0<>0<><>::uid://bfeiqutsj4t0f::::res://Scenes/health_bar.gd<>uid://ck61vp6vspvu8::::res://Assets/Sounds/PixelOperator8.ttf
 mask.tscn::PackedScene::875582675820384022::1772483988::0::1::::<><><>0<>0<><>::uid://d04dxn4ndecmg::::res://Assets/Sprites/mask.png<>uid://v00m1kyw55k5::::res://Scripts/mask.gd
-node_2d.tscn::PackedScene::6034147788165369632::1774918642::0::1::::<><><>0<>0<><>::uid://cm3ep2s7lplt4::::res://Scenes/owl.tscn<>uid://exnr7w1f26re::::res://Assets/World/world_tileset.png<>uid://ywkoc8gxcb1o::::res://Scenes/weapon_hit_box.tscn<>uid://cs2pb2088rrqv::::res://Scenes/spawner.gd<>uid://b06iva1apde4e::::res://Scenes/spear.tscn<>uid://cajrn10wkx3tq::::res://Scenes/enemytscn.tscn<>uid://qsp0r46ax8n::::res://Scenes/health_bar.tscn<>uid://davn2rl064042::::res://Scripts/Sprite-0001.png<>uid://cyh5py1yadx3s::::res://conveyer_belt.tscn<>uid://cfrho8govafhy::::res://Scenes/belt.tscn<>uid://leb6cl46a72q::::res://Assets/Sprites/trash.png<>uid://c2pt5qq605t6y::::res://Assets/Sprites/trash 3.png<>uid://t0te4qxrtjxw::::res://Assets/World/Background/game/Background.PNG<>uid://bsal6c1mwv3je::::res://Assets/World/Background/game/1st_back_layer.PNG<>uid://mqeyo4u4olkw::::res://Scenes/mask.tscn<>uid://bh4jjpsos2m7j::::res://Assets/World/Background/game/2nd_back_level.PNG<>uid://dd4fqe4wqhmsa::::res://Assets/World/Background/game/3rd_back_layer.PNG<>uid://xt88e43c0wu4::::res://Assets/Sounds/GDC Awakening.mp3<>uid://bgptdnwrxc2h::::res://Scripts/secret.gd
-owl.tscn::PackedScene::5673181170442073335::1773843445::0::1::::<><><>0<>0<><>::uid://bwweb5x4yi2re::::res://Scripts/character_body_2d.gd<>uid://dp7ymswywu6iw::::res://Assets/Sprites/idle-ani.png<>uid://7ybtoms4i262::::res://Assets/Sprites/owlAni.png<>uid://byfhs5ipk3hg7::::res://Scenes/Spawner_Anchor.gd
-health_bar.tscn::PackedScene::34151077547836315::1774918975::0::1::::<><><>0<>0<><>::uid://1pu2qv3kxa2w::::res://Scripts/health_bar.gd
+node_2d.tscn::PackedScene::6034147788165369632::1774926907::0::1::::<><><>0<>0<><>::uid://cm3ep2s7lplt4::::res://Scenes/owl.tscn<>uid://exnr7w1f26re::::res://Assets/World/world_tileset.png<>uid://ywkoc8gxcb1o::::res://Scenes/weapon_hit_box.tscn<>uid://cs2pb2088rrqv::::res://Scenes/spawner.gd<>uid://b06iva1apde4e::::res://Scenes/spear.tscn<>uid://cajrn10wkx3tq::::res://Scenes/enemytscn.tscn<>uid://davn2rl064042::::res://Scripts/Sprite-0001.png<>uid://cyh5py1yadx3s::::res://conveyer_belt.tscn<>uid://cfrho8govafhy::::res://Scenes/belt.tscn<>uid://leb6cl46a72q::::res://Assets/Sprites/trash.png<>uid://c2pt5qq605t6y::::res://Assets/Sprites/trash 3.png<>uid://t0te4qxrtjxw::::res://Assets/World/Background/game/Background.PNG<>uid://bsal6c1mwv3je::::res://Assets/World/Background/game/1st_back_layer.PNG<>uid://mqeyo4u4olkw::::res://Scenes/mask.tscn<>uid://bh4jjpsos2m7j::::res://Assets/World/Background/game/2nd_back_level.PNG<>uid://dd4fqe4wqhmsa::::res://Assets/World/Background/game/3rd_back_layer.PNG<>uid://xt88e43c0wu4::::res://Assets/Sounds/GDC Awakening.mp3<>uid://bgptdnwrxc2h::::res://Scripts/secret.gd
+owl.tscn::PackedScene::5673181170442073335::1774925012::0::1::::<><><>0<>0<><>::uid://bwweb5x4yi2re::::res://Scripts/character_body_2d.gd<>uid://qsp0r46ax8n::::res://Scenes/health_bar.tscn<>uid://dp7ymswywu6iw::::res://Assets/Sprites/idle-ani.png<>uid://7ybtoms4i262::::res://Assets/Sprites/owlAni.png<>uid://byfhs5ipk3hg7::::res://Scenes/Spawner_Anchor.gd
 spawner.gd::GDScript::6092892751210521585::1772483951::0::1::::<>Node2D<><>0<>0<><>::
 Spawner_Anchor.gd::GDScript::4081733571770773736::1772483951::0::1::::<>Node2D<><>0<>0<><>::
 spear.gd::GDScript::5255642538557108050::1772483400::0::1::::<>Area2D<><>0<>0<><>::
@@ -46,12 +47,11 @@ spear.tscn::PackedScene::4205660762818981622::1772638339::0::1::::<><><>0<>0<><>
 throw_spear_hit_box.tscn::PackedScene::169992254459996048::1774917212::0::1::::<><><>0<>0<><>::uid://dbftbqpqsi51j::::res://Spearthrowing_hit_box.gd<>uid://d3fi31e51pjyy::::res://Assets/Sprites/spear-Sheet.png
 weapon_hit_box.gd::GDScript::3070033311930977142::1771433761::0::1::::<>Area2D<><>0<>0<><>::
 weapon_hit_box.tscn::PackedScene::1730580885273100422::1774917212::0::1::::<><><>0<>0<><>::uid://bd2g37luqu7re::::res://Assets/Sprites/slash (2) (1).png<>uid://davn2rl064042::::res://Scripts/Sprite-0001.png
-::res://Scripts/::1774918750
-character_body_2d.gd::GDScript::3976237820665150802::1774917212::0::1::::<>CharacterBody2D<><>0<>0<><>::
-enemytscn.gd::GDScript::249832657328835330::1774917212::0::1::::<>CharacterBody2D<><>0<>0<><>::
+::res://Scripts/::1774923548
+character_body_2d.gd::GDScript::3976237820665150802::1774922211::0::1::::<>CharacterBody2D<><>0<>0<><>::
+enemytscn.gd::GDScript::249832657328835330::1774923548::0::1::::<>CharacterBody2D<><>0<>0<><>::
 globals.gd::GDScript::8889285727093318142::1773844190::0::1::::<>Node<><>0<>0<><>::
 mask.gd::GDScript::1527115896772406458::1772483400::0::1::::<>Area2D<><>0<>0<><>::
-health_bar.gd::GDScript::1857139031291455300::1774918750::0::1::::<>Node<><>0<>0<><>::
 Saveload.gd::GDScript::2521713410866690121::1772483400::0::1::::<>Node<><>0<>0<><>::
 secret.gd::GDScript::83519973813793133::1772483400::0::1::::<>Area2D<><>0<>0<><>::
 Sprite-0001.png::CompressedTexture2D/CompressedTexture2D::7203452432324237457::1771436774::1771436774::1::::<><><>0<>0<>574e404543ba9d9e2e844da2399e1459<>res://.godot/imported/Sprite-0001.png-f644a0f8e0ab2dee19ebfbadec37f16e.ctex::
