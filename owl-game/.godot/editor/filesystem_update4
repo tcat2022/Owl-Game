@@ -1,2 +1,2 @@
-res://Scenes/health_bar.gd
 res://Scenes/node_2d.tscn
+res://Scripts/character_body_2d.gd
