@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dydyje56xwsbq"
-path="res://.godot/imported/wizzy.png-789d389e5cdd1f94ec54084a73d89cb7.ctex"
+uid="uid://ckv052rr43bo1"
+path="res://.godot/imported/IMG_8775.png-79d10dd0173f9f57cf030fd7d90fbc50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/wizzy.png"
-dest_files=["res://.godot/imported/wizzy.png-789d389e5cdd1f94ec54084a73d89cb7.ctex"]
+source_file="res://Assets/World/Background/IMG_8775.png"
+dest_files=["res://.godot/imported/IMG_8775.png-79d10dd0173f9f57cf030fd7d90fbc50.ctex"]
 
 [params]
 

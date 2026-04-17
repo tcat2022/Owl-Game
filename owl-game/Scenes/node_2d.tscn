@@ -407,6 +407,9 @@ shape = SubResource("RectangleShape2D_fg7i4")
 position = Vector2(266, 130.00002)
 rotation = -0.0024928013
 
+[node name="enemy2" parent="." instance=ExtResource("3_hpu6p")]
+position = Vector2(149, 96)
+
 [connection signal="timeout" from="owl/Timer" to="owl" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Node2D" to="owl" method="_on_node_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="owl" method="_on_area_2d_body_entered"]

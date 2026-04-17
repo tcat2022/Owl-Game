@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dydyje56xwsbq"
-path="res://.godot/imported/wizzy.png-789d389e5cdd1f94ec54084a73d89cb7.ctex"
+uid="uid://bwv1oh3l3tws0"
+path="res://.godot/imported/junkyard parallax 5.png-2188437ce943c39974d47becd7fa43bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/wizzy.png"
-dest_files=["res://.godot/imported/wizzy.png-789d389e5cdd1f94ec54084a73d89cb7.ctex"]
+source_file="res://Assets/World/Background/junkyard parallax 5.png"
+dest_files=["res://.godot/imported/junkyard parallax 5.png-2188437ce943c39974d47becd7fa43bd.ctex"]
 
 [params]
 
