@@ -3,6 +3,7 @@ extends CharacterBody2D
 signal healthChanged # connects to health bar
 
 @onready var node_2d: Area2D = $"../Node2D"
+@export var spear_node : Node
 @onready var node_2d_2: Area2D = $"../Node2D2"
 @onready var timer: Timer = $Timer
 var proj_path = preload("res://Scenes/throw_spear_hit_box.tscn")
@@ -57,7 +58,8 @@ func _physics_process(delta: float) -> void:
 		mask_picked_up = true
 		
 	if Input.is_action_just_pressed("pick up") and Globals.can_pick_up_spear:
-		node_2d_2.queue_free()
+		
+		spear_node.queue_free()
 		mask_picked_up = true
 		Globals.SpearObtained = true
 		
@@ -274,3 +276,8 @@ func Hurt(Damage: int,Knockback: Vector2, Direction: int):
 	velocity.x = (velocity.x + Knockback.x) * (Direction) #Player knockback from enemy
 	velocity.y = velocity.y + Knockback.y
 	print(Health)
+
+
+func _on_area_2d_3_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		get_tree().change_scene_to_file("res://Scenes/node_2d.tscn")
