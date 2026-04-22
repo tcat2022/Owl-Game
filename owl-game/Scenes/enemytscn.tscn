@@ -39,7 +39,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6pxyt"]
-size = Vector2(31.921492, 51.682514)
+size = Vector2(23.94111, 41.184505)
 
 [node name="enemy" type="CharacterBody2D" unique_id=1634169121 groups=["enemy"]]
 scale = Vector2(0.97716045, 1.018134)
@@ -87,8 +87,8 @@ target_position = Vector2(12, 0)
 script = ExtResource("3_ma38c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionHitbox" unique_id=258668257]
-position = Vector2(19.444105, -4.910947)
-scale = Vector2(3.7188535, 2.4325478)
+position = Vector2(4.6051755, 7.85751)
+scale = Vector2(3.7188544, 2.4325478)
 shape = SubResource("RectangleShape2D_6pxyt")
 
 [node name="hitbox" type="Area2D" parent="." unique_id=969210329]

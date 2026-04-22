@@ -13,10 +13,10 @@ var test := 0
 var mask_picked_up = false
 var doubleJump = 1
 var double = true
-var Gravity = 900
+var Gravity = 1000
 const SPEED = 175.0
 const FRICTION = 1000
-const JUMP_VELOCITY = -250.0
+const JUMP_VELOCITY = -275.0
 var Xviewport
 var Yviewport
 var LocalXmouseposition
@@ -76,14 +76,17 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and doubleJump != 2:
 		doubleJump += 1
 		velocity.y = JUMP_VELOCITY
+		if doubleJump == 2:
+			velocity.y = JUMP_VELOCITY + 75
 		player_sprite.play("idle")
 	
 	#Gliding - Ze
 	if (velocity.y > 0) && (Input.is_action_pressed("jump")): #Checks for hold jump and falling
 		#print("ON!") #Check if statement is working
-		Gravity = 100
+		Gravity = 350
+		player_sprite.play("gliding")
 	else:
-		Gravity = 900
+		Gravity = 1000
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -168,7 +171,7 @@ func EquipingWeapon() -> void: #Function for Equiping Weapon
 
 func Combat() -> void: #Function for Combat
 	#Left Click Attacking
-	if (Input.is_action_just_pressed("attack") && !isAttacking && is_on_floor()):
+	if (Input.is_action_just_pressed("attack") && !isAttacking):
 		CombatPhase = PhaseBasicAttack
 		print(CombatPhase)
 		BasicAttack();

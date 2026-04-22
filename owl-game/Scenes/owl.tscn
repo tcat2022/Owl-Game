@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://7ybtoms4i262" path="res://Assets/Sprites/owlAni.png" id="3_7aicp"]
 [ext_resource type="Script" uid="uid://byfhs5ipk3hg7" path="res://Scenes/Spawner_Anchor.gd" id="4_dbcsv"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vkuq"]
+atlas = ExtResource("2_eyas1")
+region = Rect2(64, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_d2bti"]
 atlas = ExtResource("2_eyas1")
 region = Rect2(32, 0, 32, 32)
@@ -40,6 +44,14 @@ region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q04jw"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vkuq")
+}],
+"loop": true,
+"name": &"gliding",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d2bti")
@@ -92,7 +104,7 @@ combatant = NodePath("..")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=708810983]
 sprite_frames = SubResource("SpriteFrames_q04jw")
-animation = &"idle"
+animation = &"gliding"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=683660135]
