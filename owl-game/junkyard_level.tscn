@@ -274,7 +274,7 @@ _data = {
 &"secret": SubResource("Animation_qu8ep")
 }
 
-[node name="Node2D" type="Node2D" unique_id=1310122292]
+[node name="Node2D2" type="Node2D" unique_id=1310122292]
 
 [node name="owl" parent="." unique_id=526633454 node_paths=PackedStringArray("spear_node") instance=ExtResource("1_jqcqj")]
 position = Vector2(135, 149)
