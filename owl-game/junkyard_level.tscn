@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://f8k27p5wad2w" path="res://Assets/World/Background/junkyard parallax 2.png" id="18_qu8ep"]
 [ext_resource type="Texture2D" uid="uid://5cj4khhp4jdy" path="res://Assets/World/Background/junkyard parallax 1.png" id="19_kcwge"]
 [ext_resource type="PackedScene" uid="uid://cajrn10wkx3tq" path="res://Scenes/enemytscn.tscn" id="24_qu8ep"]
+[ext_resource type="PackedScene" uid="uid://iyjp045y0nhj" path="res://Scenes/death_plane.tscn" id="25_kcwge"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u7hu3"]
 texture = ExtResource("5_qsydo")
@@ -507,6 +508,9 @@ position = Vector2(3596, 12)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=1501988098]
 position = Vector2(9, 24)
 shape = SubResource("RectangleShape2D_qu8ep")
+
+[node name="death_plane" parent="." unique_id=1248637708 instance=ExtResource("25_kcwge")]
+position = Vector2(592, 324)
 
 [connection signal="timeout" from="owl/Timer" to="owl" method="_on_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="owl" method="_on_button_2_pressed"]
