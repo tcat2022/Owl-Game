@@ -1,7 +1,9 @@
 extends Area2D
 
 signal healthChanged
-
+@onready var sprite_2d: AnimatedSprite2D = $"../AnimatedSprite2D"
+@onready var progress_bar: ProgressBar = $"../ProgressBar"
+@onready var gpu_particles_2d: GPUParticles2D = $"../GPUParticles2D"
 var DMG = 1
 var Enemydirection
 var Knockback = Vector2(250, -200)
@@ -48,7 +50,14 @@ PlayerKnockback: Vector2) -> void: #Enemy health Function
 		Health = MaxHealth
 		
 	if (Health <= 0): #if enemy hp is less or equal to 0, he ded
-		$"..".queue_free()
+		sprite_2d.visible = false
+		progress_bar.visible = false
+		gpu_particles_2d.emitting = true
+		
 		
 	
 		
+
+
+func _on_gpu_particles_2d_finished() -> void:
+	$"..".queue_free()

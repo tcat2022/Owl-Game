@@ -41,6 +41,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6pxyt"]
 size = Vector2(23.94111, 41.184505)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y1q2d"]
+particle_flag_disable_z = true
+spread = 138.103
+initial_velocity_max = 75.38
+gravity = Vector3(0, 98, 0)
+
 [node name="enemy" type="CharacterBody2D" unique_id=1634169121 groups=["enemy"]]
 scale = Vector2(0.97716045, 1.018134)
 collision_layer = 3
@@ -100,6 +106,14 @@ position = Vector2(0.45822093, -1.8735973)
 scale = Vector2(1.1516488, 1.2043589)
 shape = SubResource("RectangleShape2D_cva8j")
 
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1983154182]
+emitting = false
+amount = 30
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_y1q2d")
+
 [connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
@@ -108,3 +122,4 @@ shape = SubResource("RectangleShape2D_cva8j")
 [connection signal="area_entered" from="hitbox" to="hitbox" method="_on_area_entered"]
 [connection signal="area_shape_entered" from="hitbox" to="DetectionHitbox" method="_on_hitbox_area_shape_entered"]
 [connection signal="body_entered" from="hitbox" to="hitbox" method="_on_body_entered"]
+[connection signal="finished" from="GPUParticles2D" to="hitbox" method="_on_gpu_particles_2d_finished"]
