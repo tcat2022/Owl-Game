@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cmhf2el2i7aq1"]
+
+[ext_resource type="Script" uid="uid://bqp0uvjbt31up" path="res://scene_switcher.gd" id="1_tp647"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_se8x8"]
+size = Vector2(124, 117)
+
+[node name="Area2D" type="Area2D" unique_id=614816704]
+script = ExtResource("1_tp647")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1883507048]
+position = Vector2(62, 58)
+shape = SubResource("RectangleShape2D_se8x8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1778078186
+::res://::1778081857
 conveyer_belt.tscn::PackedScene::6473673857484879038::1772483988::0::1::::<><><>0<>0<><>::uid://dgel6bedihihn::::res://static_body_2d.gd<>uid://d1c0scfqan0st::::res://Assets/Sprites/belt.png
 junkyard_level.tscn::PackedScene::1483586258721352666::1778078135::0::1::::<><><>0<>0<><>::uid://cm3ep2s7lplt4::::res://Scenes/owl.tscn<>uid://cs2pb2088rrqv::::res://Scenes/spawner.gd<>uid://ywkoc8gxcb1o::::res://Scenes/weapon_hit_box.tscn<>uid://b06iva1apde4e::::res://Scenes/spear.tscn<>uid://exnr7w1f26re::::res://Assets/World/world_tileset.png<>uid://davn2rl064042::::res://Scripts/Sprite-0001.png<>uid://cyh5py1yadx3s::::res://conveyer_belt.tscn<>uid://cfrho8govafhy::::res://Scenes/belt.tscn<>uid://c2pt5qq605t6y::::res://Assets/Sprites/trash 3.png<>uid://leb6cl46a72q::::res://Assets/Sprites/trash.png<>uid://dpbiqljvx82qa::::res://Assets/World/Background/junkyard parallax 9.png<>uid://dhsu6cexgnlr8::::res://Assets/Sprites/Junkyard tileset (4).png<>uid://bnn631ocrd5fp::::res://Assets/Sprites/Grasssets.png<>uid://bpud2q6sge2uy::::res://Assets/World/Background/junkyard parallax 8.png<>uid://dk1d6evm76n3h::::res://Assets/World/Background/junkyard parallax 7.png<>uid://cq6dkb5qiirk2::::res://Assets/World/Background/junyard parallax 6.png<>uid://xt88e43c0wu4::::res://Assets/Sounds/GDC Awakening.mp3<>uid://bwv1oh3l3tws0::::res://Assets/World/Background/junkyard parallax 5.png<>uid://btwkjptrgyrpk::::res://Assets/World/Background/junkyard parallax 4.png<>uid://g270ankqwcv6::::res://Assets/World/Background/junkyard parallax 3.png<>uid://bgptdnwrxc2h::::res://Scripts/secret.gd<>uid://f8k27p5wad2w::::res://Assets/World/Background/junkyard parallax 2.png<>uid://5cj4khhp4jdy::::res://Assets/World/Background/junkyard parallax 1.png<>uid://cajrn10wkx3tq::::res://Scenes/enemytscn.tscn<>uid://iyjp045y0nhj::::res://Scenes/death_plane.tscn
 Spearthrowing_hit_box.gd::GDScript::7240929056441141525::1776265288::0::1::::<>CharacterBody2D<><>0<>0<><>::
@@ -44,12 +44,12 @@ stars.png::CompressedTexture2D/CompressedTexture2D::3499712194980562077::1771436
 3rd_back_layer.PNG::CompressedTexture2D::7430027950441423436::1771436774::1771436774::1::::<><><>0<>0<>f8e0c24b30bddc78baf99aed8af58675<>res://.godot/imported/3rd_back_layer.PNG-665750e27f705f3e593d864a6c930462.ctex::
 Background.PNG::CompressedTexture2D::1386359787974807376::1771436774::1771436774::1::::<><><>0<>0<>1427bef81b87a931c29750c5057eccd7<>res://.godot/imported/Background.PNG-ded0cf735aa5328635ffbc667f462521.ctex::
 ::res://Owl-Game-main/::1776460060
-::res://Scenes/::1777473869
+::res://Scenes/::1778079685
 belt.tscn::PackedScene::5159331770662960298::1772483988::0::1::::<><><>0<>0<><>::uid://d1c0scfqan0st::::res://Assets/Sprites/belt.png
 death_plane.tscn::PackedScene::611630414324379635::1777473869::0::1::::<><><>0<>0<><>::uid://dwwpce0h2ywwb::::res://Scripts/death_plane.gd
 detection_hitbox.gd::GDScript::3979532896886612747::1774917212::0::1::::<>Area2D<><>0<>0<><>::
-enemyhitbox.gd::GDScript::4139673208836540014::1776874238::0::1::::<>Area2D<><>0<>0<><>::
-enemytscn.tscn::PackedScene::4792477576611627486::1776874731::0::1::::<><><>0<>0<><>::uid://dtaybyjtxnre::::res://Scripts/enemytscn.gd<>uid://dydyje56xwsbq::::res://Assets/Sprites/wizzy.png<>uid://qsp0r46ax8n::::res://Scenes/health_bar.tscn<>uid://by8j2v0vi18us::::res://Scenes/enemyhitbox.gd<>uid://bwxylcfkvx2p0::::res://Scenes/detection_hitbox.gd
+enemyhitbox.gd::GDScript::4139673208836540014::1778079685::0::1::::<>Area2D<><>0<>0<><>::
+enemytscn.tscn::PackedScene::4792477576611627486::1778079503::0::1::::<><><>0<>0<><>::uid://dtaybyjtxnre::::res://Scripts/enemytscn.gd<>uid://dydyje56xwsbq::::res://Assets/Sprites/wizzy.png<>uid://qsp0r46ax8n::::res://Scenes/health_bar.tscn<>uid://by8j2v0vi18us::::res://Scenes/enemyhitbox.gd<>uid://bwxylcfkvx2p0::::res://Scenes/detection_hitbox.gd
 health_bar.gd::GDScript::2746137802193426203::1774927551::0::1::::<>ProgressBar<><>0<>0<><>::
 health_bar.tscn::PackedScene::34151077547836315::1776265296::0::1::::<><><>0<>0<><>::uid://bfeiqutsj4t0f::::res://Scenes/health_bar.gd<>uid://ck61vp6vspvu8::::res://Assets/Sounds/PixelOperator8.ttf
 mask.tscn::PackedScene::875582675820384022::1772483988::0::1::::<><><>0<>0<><>::uid://d04dxn4ndecmg::::res://Assets/Sprites/mask.png<>uid://v00m1kyw55k5::::res://Scripts/mask.gd
@@ -62,10 +62,10 @@ spear.tscn::PackedScene::4205660762818981622::1772638339::0::1::::<><><>0<>0<><>
 throw_spear_hit_box.tscn::PackedScene::169992254459996048::1776265288::0::1::::<><><>0<>0<><>::uid://dbftbqpqsi51j::::res://Spearthrowing_hit_box.gd<>uid://d3fi31e51pjyy::::res://Assets/Sprites/spear-Sheet.png
 weapon_hit_box.gd::GDScript::3070033311930977142::1771433761::0::1::::<>Area2D<><>0<>0<><>::
 weapon_hit_box.tscn::PackedScene::1730580885273100422::1776265288::0::1::::<><><>0<>0<><>::uid://bd2g37luqu7re::::res://Assets/Sprites/slash (2) (1).png<>uid://davn2rl064042::::res://Scripts/Sprite-0001.png
-::res://Scripts/::1777473869
+::res://Scripts/::1778079351
 character_body_2d.gd::GDScript::3976237820665150802::1776873408::0::1::::<>CharacterBody2D<><>0<>0<><>::
 death_plane.gd::GDScript::8749747497253246933::1777473869::0::1::::<>Area2D<><>0<>0<><>::
-enemytscn.gd::GDScript::249832657328835330::1774923548::0::1::::<>CharacterBody2D<><>0<>0<><>::
+enemytscn.gd::GDScript::249832657328835330::1778079351::0::1::::<>CharacterBody2D<><>0<>0<><>::
 globals.gd::GDScript::8889285727093318142::1776722406::0::1::::<>Node<><>0<>0<><>::
 mask.gd::GDScript::1527115896772406458::1772483400::0::1::::<>Area2D<><>0<>0<><>::
 Saveload.gd::GDScript::2521713410866690121::1772483400::0::1::::<>Node<><>0<>0<><>::
