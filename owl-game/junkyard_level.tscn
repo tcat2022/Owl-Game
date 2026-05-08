@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://5cj4khhp4jdy" path="res://Assets/World/Background/junkyard parallax 1.png" id="19_kcwge"]
 [ext_resource type="PackedScene" uid="uid://cajrn10wkx3tq" path="res://Scenes/enemytscn.tscn" id="24_qu8ep"]
 [ext_resource type="PackedScene" uid="uid://iyjp045y0nhj" path="res://Scenes/death_plane.tscn" id="25_kcwge"]
+[ext_resource type="PackedScene" uid="uid://cmhf2el2i7aq1" path="res://Scenes/scene_changer.tscn" id="26_m80k0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u7hu3"]
 texture = ExtResource("5_qsydo")
@@ -519,6 +520,10 @@ position = Vector2(2065, 41)
 
 [node name="death_plane" parent="." unique_id=1248637708 instance=ExtResource("25_kcwge")]
 position = Vector2(599, 322)
+
+[node name="JunkyardEntrance1" parent="." unique_id=614816704 instance=ExtResource("26_m80k0")]
+position = Vector2(3586, 1.9999995)
+scale = Vector2(0.2582926, 0.55244815)
 
 [connection signal="timeout" from="owl/Timer" to="owl" method="_on_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="owl" method="_on_button_2_pressed"]

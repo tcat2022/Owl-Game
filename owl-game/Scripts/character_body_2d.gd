@@ -224,6 +224,15 @@ func Charging(ButtonHeld: float) -> void: #Function for Charging
 		$Anchor/Spawner.ProjSpeed = 1000
 		$Anchor/Spawner.shoot()
 
+#==============================================================================
+
+func Interact() -> bool:
+	if Input.is_action_just_pressed("pick up"):
+		return true
+	else:
+		return false
+
+#==============================================================================
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	hit_checkpoint = true
 
