@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://cm3ep2s7lplt4" path="res://Scenes/owl.tscn" id="1_jqcqj"]
 [ext_resource type="Script" uid="uid://cs2pb2088rrqv" path="res://Scenes/spawner.gd" id="2_58brc"]
-[ext_resource type="PackedScene" uid="uid://ywkoc8gxcb1o" path="res://Scenes/weapon_hit_box.tscn" id="3_hetab"]
 [ext_resource type="Texture2D" uid="uid://exnr7w1f26re" path="res://Assets/World/world_tileset.png" id="5_qsydo"]
 [ext_resource type="Texture2D" uid="uid://davn2rl064042" path="res://Scripts/Sprite-0001.png" id="6_a0tlc"]
 [ext_resource type="PackedScene" uid="uid://cyh5py1yadx3s" path="res://conveyer_belt.tscn" id="7_qu8ep"]
@@ -287,12 +286,6 @@ zoom = Vector2(3.6, 3.6)
 limit_left = 0
 limit_bottom = 250
 
-[node name="WeaponHitBox2" parent="owl" unique_id=1634339030 groups=["weaponhitbox"] instance=ExtResource("3_hetab")]
-process_mode = 0
-light_mask = 3
-visibility_layer = 3
-scale = Vector2(0.46859327, 0.6869693)
-
 [node name="Timer" type="Timer" parent="owl" unique_id=344238842]
 one_shot = true
 
@@ -387,10 +380,10 @@ motion_mirroring = Vector2(350, 0)
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Ground" unique_id=929928290]
 z_index = -3
-offset_left = -107.0
-offset_top = -229.0
-offset_right = 3093.0
-offset_bottom = 1571.0
+offset_left = -103.0
+offset_top = -224.0
+offset_right = 3097.0
+offset_bottom = 1576.0
 scale = Vector2(0.11678172, 0.2671274)
 texture = ExtResource("18_qu8ep")
 stretch_mode = 2
