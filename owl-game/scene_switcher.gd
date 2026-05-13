@@ -6,9 +6,11 @@ var Player
 var Interacted
 var isinRange = false
 var CityLevel = "res://Scenes/node_2d.tscn"
+var SpearRoom = "res://Spear_Room.tscn"
 var SceneArray = [
-	["JunkyardEntrance1", "CityLevel", CityLevel],
-	["Placeholder1", "Placeholder2", null]
+	["JunkyardEntrance1", "SpearRoom", SpearRoom],
+	["Placeholder1", "Placeholder2", null],
+	
 	]
 
 func _physics_process(delta: float) -> void:

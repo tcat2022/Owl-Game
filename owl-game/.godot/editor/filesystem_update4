@@ -1,6 +1,6 @@
 res://junkyard_level.tscn
-res://scene_switcher.gd
 res://Scenes/scene_changer.tscn
-res://Scenes/node_2d.tscn
-res://Scripts/character_body_2d.gd
+res://scene_switcher.gd
+res://Spear_Room.tscn
 res://Scenes/owl.tscn
+res://Scenes/weapon_hit_box.tscn

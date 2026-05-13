@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dp7ymswywu6iw" path="res://Assets/Sprites/idle-ani.png" id="2_eyas1"]
 [ext_resource type="Texture2D" uid="uid://7ybtoms4i262" path="res://Assets/Sprites/owlAni.png" id="3_7aicp"]
 [ext_resource type="Script" uid="uid://byfhs5ipk3hg7" path="res://Scenes/Spawner_Anchor.gd" id="4_dbcsv"]
+[ext_resource type="PackedScene" uid="uid://ywkoc8gxcb1o" path="res://Scenes/weapon_hit_box.tscn" id="5_lbd08"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1vkuq"]
 atlas = ExtResource("2_eyas1")
@@ -110,6 +111,9 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=683660135]
 position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_18y2i")
+
+[node name="WeaponHitBox" parent="." unique_id=75900575 instance=ExtResource("5_lbd08")]
+visible = false
 
 [node name="Anchor" type="Node2D" parent="." unique_id=1783172440]
 script = ExtResource("4_dbcsv")
