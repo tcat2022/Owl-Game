@@ -14,8 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://t0te4qxrtjxw" path="res://Assets/World/Background/game/Background.PNG" id="9_p20hg"]
 [ext_resource type="Texture2D" uid="uid://bsal6c1mwv3je" path="res://Assets/World/Background/game/1st_back_layer.PNG" id="10_he4j0"]
 [ext_resource type="PackedScene" uid="uid://mqeyo4u4olkw" path="res://Scenes/mask.tscn" id="10_op2xg"]
+[ext_resource type="Texture2D" uid="uid://b5tbjw50nq3ii" path="res://Assets/Sprites/city_tile_2.png" id="11_1nvmp"]
 [ext_resource type="Texture2D" uid="uid://bh4jjpsos2m7j" path="res://Assets/World/Background/game/2nd_back_level.PNG" id="11_he4j0"]
 [ext_resource type="Texture2D" uid="uid://dd4fqe4wqhmsa" path="res://Assets/World/Background/game/3rd_back_layer.PNG" id="12_85gyg"]
+[ext_resource type="Texture2D" uid="uid://bkbw07bn0xg0n" path="res://Assets/Sprites/Rescaled_city_tileset.png" id="12_el1jj"]
 [ext_resource type="AudioStream" uid="uid://xt88e43c0wu4" path="res://Assets/Sounds/GDC Awakening.mp3" id="13_85gyg"]
 [ext_resource type="Script" uid="uid://bgptdnwrxc2h" path="res://Scripts/secret.gd" id="15_c32x4"]
 
@@ -187,6 +189,30 @@ texture = ExtResource("7_c32x4")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_03fgm"]
+texture = ExtResource("11_1nvmp")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uu23e"]
+texture = ExtResource("12_el1jj")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_rj586"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_d21ai")
@@ -195,6 +221,8 @@ sources/2 = SubResource("TileSetScenesCollectionSource_85gyg")
 sources/3 = SubResource("TileSetScenesCollectionSource_c32x4")
 sources/6 = SubResource("TileSetAtlasSource_fg7i4")
 sources/4 = SubResource("TileSetAtlasSource_hpu6p")
+sources/7 = SubResource("TileSetAtlasSource_03fgm")
+sources/8 = SubResource("TileSetAtlasSource_uu23e")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
 size = Vector2(20, 47)
@@ -222,6 +250,12 @@ spear_node = NodePath("../Node2D2")
 
 [node name="CollisionShape2D" parent="owl" index="2" unique_id=683660135 groups=["player"]]
 
+[node name="AnimatedSprite2D" parent="owl/WeaponHitBox" parent_id_path=PackedInt32Array(2126450529, 75900575) index="1" unique_id=916468571]
+scale = Vector2(1.9469845, 0.99719083)
+
+[node name="CollisionShape2D" parent="owl/WeaponHitBox" parent_id_path=PackedInt32Array(2126450529, 75900575) index="2" unique_id=50810104 groups=["weaponhitbox"]]
+process_mode = 3
+
 [node name="Spawner" parent="owl/Anchor" parent_id_path=PackedInt32Array(2126450529, 1783172440) index="0" unique_id=1175435403]
 script = ExtResource("2_gwne5")
 
@@ -230,17 +264,11 @@ zoom = Vector2(3.6, 3.6)
 limit_left = 0
 limit_bottom = 215
 
-[node name="WeaponHitBox" parent="owl" unique_id=1884732342 groups=["weaponhitbox"] instance=ExtResource("2_fg7i4")]
+[node name="WeaponHitBox2" parent="owl" unique_id=1884732342 groups=["weaponhitbox"] instance=ExtResource("2_fg7i4")]
 process_mode = 0
 light_mask = 3
 visibility_layer = 3
 scale = Vector2(0.46859327, 0.6869693)
-
-[node name="AnimatedSprite2D" parent="owl/WeaponHitBox" index="1" unique_id=916468571]
-scale = Vector2(1.9469845, 0.99719083)
-
-[node name="CollisionShape2D" parent="owl/WeaponHitBox" index="3" unique_id=50810104 groups=["weaponhitbox"]]
-process_mode = 3
 
 [node name="Timer" type="Timer" parent="owl" unique_id=59925910]
 one_shot = true
