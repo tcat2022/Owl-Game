@@ -239,10 +239,12 @@ position = Vector2(65, -78)
 [node name="Area2D" parent="." unique_id=614816704 instance=ExtResource("11_mcabv")]
 position = Vector2(-4, -154)
 
-[node name="owl" parent="." unique_id=1668035102 instance=ExtResource("9_g1sr3")]
+[node name="owl" parent="." unique_id=1668035102 node_paths=PackedStringArray("spear_node") instance=ExtResource("9_g1sr3")]
 position = Vector2(51, -79)
+spear_node = NodePath("../Node2D")
 
 [node name="Camera2D" type="Camera2D" parent="owl" unique_id=465043257]
-position = Vector2(-51, 79)
+position = Vector2(8, 4)
+zoom = Vector2(3.6, 3.6)
 
 [editable path="owl"]

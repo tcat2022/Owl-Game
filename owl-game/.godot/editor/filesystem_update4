@@ -1,6 +1,2 @@
-res://junkyard_level.tscn
 res://Scenes/scene_changer.tscn
-res://scene_switcher.gd
 res://Spear_Room.tscn
-res://Scenes/owl.tscn
-res://Scenes/weapon_hit_box.tscn
